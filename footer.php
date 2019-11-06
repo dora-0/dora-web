@@ -1,23 +1,15 @@
 <footer class="page-footer dark">
     <div class="container">
         <div class="row">
-            <div class="col-sm-3">
+            <div class="col-sm-4">
                 <h5>Get started</h5>
                 <ul>
                     <li><a href="#">Home</a></li>
-                    <li><a href="#">Sign up</a></li>
-                    <li><a href="#">Downloads</a></li>
+                    <li><a href="#">가입</a></li>
+                    <li><a href="#">다운로드</a></li>
                 </ul>
             </div>
-            <div class="col-sm-3">
-                <h5>About us</h5>
-                <ul>
-                    <li><a href="#">Company Information</a></li>
-                    <li><a href="#">Contact us</a></li>
-                    <li><a href="#">Reviews</a></li>
-                </ul>
-            </div>
-            <div class="col-sm-3">
+            <div class="col-sm-4">
                 <h5>Support</h5>
                 <ul>
                     <li><a href="#">FAQ</a></li>
@@ -25,7 +17,7 @@
                     <li><a href="#">Forums</a></li>
                 </ul>
             </div>
-            <div class="col-sm-3">
+            <div class="col-sm-4">
                 <h5>Legal</h5>
                 <ul>
                     <li><a href="#">Terms of Service</a></li>
