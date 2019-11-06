@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Login - dora</title>
+    <title>Register - dora</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
@@ -17,19 +17,17 @@
 
 <body>
 <?php include("nav.php"); ?>
-    <main class="page login-page">
+    <main class="page registration-page">
         <section class="clean-block clean-form dark">
             <div class="container">
                 <div class="block-heading">
-                    <h2 class="text-success">Log In</h2>
+                    <h2 class="text-success">Registration</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p>
                 </div>
                 <form>
-                    <div class="form-group"><label for="email">Email</label><input class="form-control item" type="email" id="email"></div>
-                    <div class="form-group"><label for="password">Password</label><input class="form-control" type="password" id="password"></div>
-                    <div class="form-group">
-                        <div class="form-check"><input class="form-check-input" type="checkbox" id="checkbox"><label class="form-check-label" for="checkbox">Remember me</label></div>
-                    </div><button class="btn btn-success btn-block" type="submit">Log In</button></form>
+                    <div class="form-group"><label for="name">Name</label><input class="form-control item" type="text" id="name"></div>
+                    <div class="form-group"><label for="password">Password</label><input class="form-control item" type="password" id="password"></div>
+                    <div class="form-group"><label for="email">Email</label><input class="form-control item" type="email" id="email"></div><button class="btn btn-success btn-block" type="submit">Sign Up</button></form>
             </div>
         </section>
     </main>
