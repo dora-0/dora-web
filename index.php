@@ -1,7 +1,7 @@
 <?php $parent = __FILE__; ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 
 <head>
     <meta charset="utf-8">
@@ -20,21 +20,21 @@
 <main class="page landing-page">
     <section class="clean-block clean-hero" style="background-image: url(&quot;assets/img/tech/image4.jpg&quot;);color: rgba(40,167,69, 0.85);">
         <div class="text">
-            <h2>Lorem ipsum dolor sit amet.</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p><button class="btn btn-outline-light btn-lg" type="button">Learn More</button></div>
+            <h2>테스트 페이지</h2>
+            <p>Chat, Blog, Member</p><button class="btn btn-outline-light btn-lg" type="button">Learn More</button></div>
     </section>
     <section class="clean-block clean-info dark">
         <div class="container">
             <div class="block-heading">
                 <h2 class="text-success">Info</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p>
+                <p>라이브 채팅 서비스</p>
             </div>
             <div class="row align-items-center">
                 <div class="col-md-6"><img class="img-thumbnail" src="assets/img/scenery/image5.jpg"></div>
                 <div class="col-md-6">
-                    <h3>Lorem impsum dolor sit amet</h3>
+                    <h3>언제 어디서나 자유롭게</h3>
                     <div class="getting-started-info">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <p>채팅 서비스를 이용할 수 있습니다.</p>
                     </div><button class="btn btn-outline-success btn-lg" type="button">Join Now</button></div>
             </div>
         </div>
@@ -43,24 +43,24 @@
         <div class="container">
             <div class="block-heading">
                 <h2 class="text-success">Features</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p>
+                <p>기능을 소개합니다.</p>
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-5 feature-box"><i class="icon-star icon"></i>
                     <h4>Bootstrap 4</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p>
+                    <p>이 페이지는 Bootstrap으로 만들어졌습니다.</p>
                 </div>
                 <div class="col-md-5 feature-box"><i class="icon-pencil icon"></i>
                     <h4>Customizable</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p>
+                    <p>자유롭게 커스텀할 수 있습니다.</p>
                 </div>
                 <div class="col-md-5 feature-box"><i class="icon-screen-smartphone icon"></i>
                     <h4>Responsive</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p>
+                    <p>반응형 웹 디자인을 제공합니다.</p>
                 </div>
                 <div class="col-md-5 feature-box"><i class="icon-refresh icon"></i>
                     <h4>All Browser Compatibility</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p>
+                    <p>모든 브라우저에서 호환 가능합니다.</p>
                 </div>
             </div>
         </div>

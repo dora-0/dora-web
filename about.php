@@ -1,7 +1,7 @@
 <?php $parent = __FILE__; ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 
 <head>
     <meta charset="utf-8">
@@ -22,7 +22,7 @@
     <section class="clean-block features">
         <div class="container">
             <div class="block-heading">
-                <h2 class="text-success">Features</h2>
+                <h2 class="text-success">About</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p>
             </div>
             <div class="row justify-content-center">
