@@ -13,39 +13,34 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
     <link rel="stylesheet" href="assets/css/smoothproducts.css">
     <link rel="stylesheet" href="assets/css/user.css">
+    <link rel="stylesheet" href="chat.css">
 </head>
 
 <body>
 <?php include("nav.php"); ?>
 <main class="page landing-page">
     <section class="clean-block features">
-        <div class="container">
-            <div class="block-heading">
-                <h2 class="text-success">Features</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-md-5 feature-box"><i class="icon-star icon"></i>
-                    <h4>Bootstrap 4</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p>
+        <ul class="pages">
+            <li class="chat page">
+                <div class="chatArea">
+                    <ul class="messages"></ul>
                 </div>
-                <div class="col-md-5 feature-box"><i class="icon-pencil icon"></i>
-                    <h4>Customizable</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p>
+                <input class="inputMessage" placeholder="여기에 입력 ..."/>
+            </li>
+            <li class="login page">
+                <div class="form">
+                    <h3 class="title">닉네임을 입력하세요.</h3>
+                    <input class="usernameInput" type="text" maxlength="14" />
                 </div>
-                <div class="col-md-5 feature-box"><i class="icon-screen-smartphone icon"></i>
-                    <h4>Responsive</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p>
-                </div>
-                <div class="col-md-5 feature-box"><i class="icon-refresh icon"></i>
-                    <h4>All Browser Compatibility</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p>
-                </div>
-            </div>
-        </div>
+            </li>
+        </ul>
+
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="https://mandora.xyz:3001/socket.io/socket.io.js"></script>
+        <script src="https://mandora.xyz:3001/public/main.js"></script>
     </section>
 </main>
-<?php include("footer.php"); ?>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
