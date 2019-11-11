@@ -1,3 +1,4 @@
+<?php if (isset($parent)): ?>
 <footer class="page-footer dark">
     <div class="container">
         <div class="row">
@@ -31,3 +32,4 @@
         <p>© 2019 dora</p>
     </div>
 </footer>
+<?php endif; ?>
