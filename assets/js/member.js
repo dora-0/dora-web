@@ -1,7 +1,7 @@
 function verify_data() {
     var params = $("#JoinForm").serialize();
     $.ajax({
-        url: 'ajax/verify_data.php',
+        url: 'ajax/verify_data',
         type: 'POST',
         data: params,
         dataType: 'json',
