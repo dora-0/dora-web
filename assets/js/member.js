@@ -8,8 +8,8 @@ function verify_data() {
         dataType: 'json',
         success: function (response) {
             // console.log(response[0]);
-            $('#verify_user_id').css("display", "block").html(response[0].user_id.outMsg);
-            $('#verify_nickname').css("display", "block").html(response[0].nickname.outMsg);
+            $('#verify_user_id').html(response[0].user_id.outMsg);
+            $('#verify_nickname').html(response[0].nickname.outMsg);
             verified = response[0].user_id.verified && response[0].nickname.verified;
         },
         error: function (jqXHR) {
