@@ -21,6 +21,7 @@
         </li>
     </ul>
     <script>
+        //TODO: JQuery 문법으로 바꾸기
         function init_login() {
             document.getElementsByClassName('login')[0].style.display = "block";
             document.getElementsByClassName('load')[0].style.display = "none";
