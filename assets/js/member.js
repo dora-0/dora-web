@@ -7,8 +7,8 @@ function verify_data() {
         dataType: 'json',
         success: function (response) {
             console.log(response[0]);
-            $('#verify_user_id').text(response[0].user_id.outMsg);
-            $('#verify_nickname').text(response[0].nickname.outMsg);
+            $('#verify_user_id').html(response[0].user_id.outMsg);
+            $('#verify_nickname').html(response[0].nickname.outMsg);
         },
         error: function (jqXHR) {
             alert("Ajax 오류가 발생했습니다. (Error Code: " + jqXHR.status + ")");

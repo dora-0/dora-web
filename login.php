@@ -29,7 +29,7 @@
                 <div class="form-group">
                     <div class="form-check"><input class="form-check-input" type="checkbox" id="checkbox"><label class="form-check-label" for="checkbox">자동 로그인</label></div>
                 </div><button class="btn btn-success btn-block" type="submit">로그인</button>
-                <button class="btn btn-block btn-outline-success" type="submit">회원가입</button></form>
+                <button class="btn btn-block btn-outline-success" type="button" onclick="location.href = 'join'">회원가입</button></form>
         </div>
     </section>
 </main>

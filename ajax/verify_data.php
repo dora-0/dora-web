@@ -17,29 +17,29 @@ function verify_data($string, $mode) {
 
         switch ($mode) {
             case "user_id":
-                $data->outMsg = "사용 가능한 아이디입니다.";
+                $data->outMsg = "<span class='text-success'>사용 가능한 아이디입니다.</span>";
 
                 if (preg_match("/^[A-Za-z0-9]+$/", $string) == false) {
                     $data->verified = false;
-                    $data->outMsg = "아이디는 영문자 또는 숫자만 사용 가능합니다.";
+                    $data->outMsg = "<span class='text-danger'>아이디는 영문자 또는 숫자만 사용 가능합니다.</span>";
                 }
 
                 if (strlen($string) > 20) {
                     $data->verified = false;
-                    $data->outMsg = "아이디의 길이는 최대 20자까지만 허용됩니다.";
+                    $data->outMsg = "<span class='text-danger'>아이디의 길이는 최대 20자까지만 허용됩니다.</span>";
                 }
                 break;
             case "nickname":
-                $data->outMsg = "사용 가능한 닉네임입니다.";
+                $data->outMsg = "<span class='text-success'>사용 가능한 닉네임입니다.</span>";
 
                 if (preg_match("/[ #\&\+\-%@=\/\\\:;,\.'\"\^`~\_|\!\?\*$#<>()\[\]\{\}]/i", $string) != false) {
                     $data->verified = false;
-                    $data->outMsg = "닉네임에는 특수문자를 사용할 수 없습니다.";
+                    $data->outMsg = "<span class='text-danger'>닉네임에는 특수문자를 사용할 수 없습니다.</span>";
                 }
 
                 if (strlen($string) > 20) {
                     $data->verified = false;
-                    $data->outMsg = "닉네임의 길이는 최대 20자까지만 허용됩니다.";
+                    $data->outMsg = "<span class='text-danger'>닉네임의 길이는 최대 20자까지만 허용됩니다.</span>";
                 }
                 break;
             default:

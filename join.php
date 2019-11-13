@@ -25,9 +25,9 @@
                 <p>일부 서비스는 회원가입 후 이용 가능합니다.</p>
             </div>
             <form id="JoinForm" method="post">
-                <div class="form-group"><label for="username">아이디</label><input class="form-control item" type="text" id="username" name="user_id"><span id="verify_user_id"></span></div>
+                <div class="form-group"><label for="username">아이디</label><input class="form-control item" type="text" id="username" name="user_id"><label id="verify_user_id"></label></div>
                 <div class="form-group"><label for="password">비밀번호</label><input class="form-control item" type="password" id="password" name="password"></div>
-                <div class="form-group"><label for="nick">닉네임</label><input class="form-control item" type="text" id="nick" name="nickname"><span id="verify_nickname"></span></div>
+                <div class="form-group"><label for="nick">닉네임</label><input class="form-control item" type="text" id="nick" name="nickname"><label id="verify_nickname"></label></div>
                 <div class="form-group"><label for="email">E-mail</label><input class="form-control item" type="email" id="email" name="email"></div><button class="btn btn-success btn-block" type="submit">회원가입</button>
             </form>
         </div>
