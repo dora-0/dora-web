@@ -49,7 +49,9 @@ function verify_data($string, $mode) {
         return $data;
     }
 
-    return false;
+    $data->verified = false;
+    $data->outMsg = "<span class='text-danger'>내용을 입력해 주세요.</span>";
+    return $data;
 }
 
 $data->user_id = verify_data($_POST["user_id"], "user_id");
