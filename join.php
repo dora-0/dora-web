@@ -21,13 +21,15 @@
     <section class="clean-block clean-form dark">
         <div class="container">
             <div class="block-heading">
-                <h2 class="text-success">Registration</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p>
+                <h2 class="text-success">회원가입</h2>
+                <p>일부 서비스는 회원가입 후 이용 가능합니다.</p>
             </div>
-            <form>
-                <div class="form-group"><label for="name">Name</label><input class="form-control item" type="text" id="name"></div>
-                <div class="form-group"><label for="password">Password</label><input class="form-control item" type="password" id="password"></div>
-                <div class="form-group"><label for="email">Email</label><input class="form-control item" type="email" id="email"></div><button class="btn btn-success btn-block" type="submit">Sign Up</button></form>
+            <form id="JoinForm" method="post">
+                <div class="form-group"><label for="username">아이디</label><input class="form-control item" type="text" id="username" name="user_id"><span id="verify_user_id"></span></div>
+                <div class="form-group"><label for="password">비밀번호</label><input class="form-control item" type="password" id="password" name="password"></div>
+                <div class="form-group"><label for="nick">닉네임</label><input class="form-control item" type="text" id="nick" name="nickname"><span id="verify_nickname"></span></div>
+                <div class="form-group"><label for="email">E-mail</label><input class="form-control item" type="email" id="email" name="email"></div><button class="btn btn-success btn-block" type="submit">회원가입</button>
+            </form>
         </div>
     </section>
 </main>
@@ -37,6 +39,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
 <script src="assets/js/smoothproducts.min.js"></script>
 <script src="assets/js/theme.js"></script>
+<script src="assets/js/member.js"></script>
 </body>
 
 </html>
