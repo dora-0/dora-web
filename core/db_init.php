@@ -1,5 +1,5 @@
 <?php
-$host = "dora.koreacentral.cloudapp.azure.com";
+$host = "azure.mandora.xyz";
 $user = "dora-web";
 $password = "GSGMFGWHOjrvQwZa";
 $dbname = "dora-web";
