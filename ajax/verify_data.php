@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] != "POST") {
 }
 
 $data = new stdClass();
-$arr = array();
+//$arr = array();
 
 function verify_data($string, $mode) {
     $data = new stdClass();
@@ -56,7 +56,9 @@ function verify_data($string, $mode) {
 
 $data->user_id = verify_data($_POST["user_id"], "user_id");
 $data->nickname = verify_data($_POST["nickname"], "nickname");
-$arr[] = $data;
-echo json_encode($arr);
-unset($arr, $data);
+//$arr[] = $data;
+//echo json_encode($arr);
+echo json_encode($data);
+//unset($arr, $data);
+unset($data);
 ?>
