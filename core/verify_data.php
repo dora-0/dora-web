@@ -95,7 +95,7 @@ if (isset($_GET["mode"])) {
     }
 }
 else {
-    require_once "core/db_init.php";
+    require_once "db_init.php";
 
     $query = "SELECT * FROM `users` WHERE user_id='".$_POST["user_id"]."'";
     if ($result = mysqli_query($link, $query, MYSQLI_STORE_RESULT)) {
