@@ -21,6 +21,7 @@ function verify_data() {
         }
     });
 
+    console.log("verified: " + verified);
     return verified;
 }
 
