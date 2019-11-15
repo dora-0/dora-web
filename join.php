@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <h2 class="text-success">회원가입</h2>
                 <p>일부 서비스는 회원가입 후 이용 가능합니다.</p>
             </div>
-            <form id="JoinForm" name="joinForm" method="post" action="join">
+            <form id="JoinForm" method="post" action="join">
                 <div class="form-group"><label for="username">아이디</label><input class="form-control item" type="text" id="username" name="user_id"><label id="verify_user_id"></label></div>
                 <div class="form-group"><label for="password">비밀번호</label><input class="form-control item" type="password" id="password" name="password"></div>
                 <div class="form-group"><label for="password_confirm">비밀번호 확인</label><input class="form-control item" type="password" id="password_confirm" name="password_confirm"></div>
