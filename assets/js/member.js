@@ -16,14 +16,15 @@ function verify_data() {
             $('#verify_user_id').html(response.user_id.outMsg);
             $('#verify_nickname').html(response.nickname.outMsg);
             verified = response.user_id.verified && response.nickname.verified;
+
+            console.log("verified: " + verified);
+            return verified;
         },
         error: function (jqXHR) {
             alert("Ajax 오류가 발생했습니다. (Error Code: " + jqXHR.status + ")");
+            return false;
         }
     });
-
-    console.log("verified: " + verified);
-    return verified;
 }
 
 function join_user() {
