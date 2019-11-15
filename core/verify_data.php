@@ -27,10 +27,7 @@ function verify_data($string, $mode) {
                 }
 
                 $query = "SELECT * FROM `users` WHERE user_id='".$_POST["user_id"]."'";
-                echo "<script>alert('DEBUG: query: ' + $query)</script>";
                 if ($result = mysqli_query($_SESSION['link'], $query, MYSQLI_STORE_RESULT)) {
-                    echo "<script>alert('DEBUG: fetched')</script>";
-
                     if (mysqli_num_rows($result) !== 0) {
                         $data->verified = false;
                         $data->outMsg = "<span class='text-danger'>이미 존재하는 아이디입니다.</span>";
