@@ -4,6 +4,8 @@ if ($_SERVER["REQUEST_METHOD"] != "POST") {
 }
 
 session_start();
+header("Access-Control-Allow-Origin: https://azure.mandora.xyz");
+header("Access-Control-Allow-Credentials: true");
 $data = new stdClass();
 
 function verify_data($string, $mode) {
