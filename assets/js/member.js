@@ -36,3 +36,6 @@ function verify_data(mode = null) {
 
 $('#username').change(verify_data);
 $('#nick').change(verify_data);
+$('#password').change(verify_data);
+$('#password_confirm').change(verify_data);
+$('#email').change(verify_data);
