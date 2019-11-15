@@ -12,6 +12,7 @@ function verify_data() {
             // $('#verify_nickname').html(response[0].nickname.outMsg);
             // verified = response[0].user_id.verified && response[0].nickname.verified;
 
+            console.log(response);
             $('#verify_user_id').html(response.user_id.outMsg);
             $('#verify_nickname').html(response.nickname.outMsg);
             verified = response.user_id.verified && response.nickname.verified;
