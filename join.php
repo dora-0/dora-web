@@ -3,15 +3,15 @@
     require_once "core/db_init.php";
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        require_once "core/verify_data.php?mode=process";
+        include_once "core/verify_data.php?mode=process";
 
         $query = "INSERT INTO `users` (user_id, nickname, password, email) VALUES ('".$_POST["user_id"]."', '".$_POST["nickname"]."', PASSWORD('".$_POST["password"]."'), '".$_POST["email"]."')";
-        if (!mysqli_query($link, $query, MYSQLI_USE_RESULT)) {
-            echo "<script>alert('".mysqli_error($link)."')</script>";
+        if (!mysqli_query($_SESSION['link'], $query, MYSQLI_USE_RESULT)) {
+            echo "<script>alert('".mysqli_error($_SESSION['link'])."')</script>";
             exit;
         }
         unset($query);
-        mysqli_close($link);
+        mysqli_close($_SESSION['link']);
 
         echo "<script>alert('회원가입이 완료되었습니다.'); window.location.href = '/dora-web/'</script>";
 //        header('HTTP/1.1 301 Moved Permanently');
