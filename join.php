@@ -7,15 +7,15 @@
 
         $query = "INSERT INTO `users` (user_id, nickname, password, email) VALUES ('".$_POST["user_id"]."', '".$_POST["nickname"]."', PASSWORD('".$_POST["password"]."'), '".$_POST["email"]."')";
         if (!mysqli_query($link, $query, MYSQLI_USE_RESULT)) {
-            echo "<script>alert('".mysqli_error($link)."')";
+            echo "<script>alert('".mysqli_error($link)."')</script>";
             exit;
         }
         unset($query);
         mysqli_close($link);
 
-        echo "<script>alert('회원가입이 완료되었습니다.')</script>";
-        header('HTTP/1.1 301 Moved Permanently');
-        header('Location: https://azure.mandora.xyz/dora-web/');
+        echo "<script>alert('회원가입이 완료되었습니다.'); window.location.href = '/dora-web/'</script>";
+//        header('HTTP/1.1 301 Moved Permanently');
+//        header('Location: https://azure.mandora.xyz/dora-web/');
         exit;
     }
 ?>
