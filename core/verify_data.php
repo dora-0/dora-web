@@ -3,30 +3,6 @@ if ($_SERVER["REQUEST_METHOD"] != "POST") {
     exit;
 }
 
-$data = new stdClass();
-$data->is_dupe = new stdClass();
-$data->is_dupe->user_id = false;
-$data->is_dupe->nickname = false;
-
-$query = "SELECT * FROM `users` WHERE user_id='".$_POST["user_id"]."'";
-if ($result = mysqli_query($link, $query, MYSQLI_USE_RESULT)) {
-    if ($row = mysqli_fetch_object($result)) {
-//        $user_id = $row->user_id;
-        $data->is_dupe->user_id = true;
-        mysqli_free_result($result);
-        unset($query);
-    }
-}
-
-$query = "SELECT * FROM `users` WHERE nickname='".$_POST["nickname"]."'";
-if ($result = mysqli_query($link, $query, MYSQLI_USE_RESULT)) {
-    if ($row = mysqli_fetch_object($result)) {
-        $data->is_dupe->nickname = true;
-        mysqli_free_result($result);
-        unset($query);
-    }
-}
-
 function verify_data($string, $mode) {
     $data = new stdClass();
 
@@ -47,9 +23,14 @@ function verify_data($string, $mode) {
                     $data->outMsg = "<span class='text-danger'>아이디의 길이는 최대 20자까지만 허용됩니다.</span>";
                 }
 
-                if ($data->is_dupe->user_id) {
-                    $data->verified = false;
-                    $data->outMsg = "<span class='text-danger'>이미 존재하는 아이디입니다.</span>";
+                $query = "SELECT * FROM `users` WHERE user_id='".$_POST["user_id"]."'";
+                if ($result = mysqli_query($GLOBALS['link'], $query, MYSQLI_USE_RESULT)) {
+                    if ($row = mysqli_fetch_object($result)) {
+                        $data->verified = false;
+                        $data->outMsg = "<span class='text-danger'>이미 존재하는 아이디입니다.</span>";
+                        mysqli_free_result($result);
+                        unset($query);
+                    }
                 }
                 break;
             case "nickname":
@@ -65,9 +46,14 @@ function verify_data($string, $mode) {
                     $data->outMsg = "<span class='text-danger'>닉네임의 길이는 최대 20자까지만 허용됩니다.</span>";
                 }
 
-                if ($data->is_dupe->nickname) {
-                    $data->verified = false;
-                    $data->outMsg = "<span class='text-danger'>이미 존재하는 닉네임입니다.</span>";
+                $query = "SELECT * FROM `users` WHERE nickname='".$_POST["nickname"]."'";
+                if ($result = mysqli_query($GLOBALS['link'], $query, MYSQLI_USE_RESULT)) {
+                    if ($row = mysqli_fetch_object($result)) {
+                        $data->verified = false;
+                        $data->outMsg = "<span class='text-danger'>이미 존재하는 닉네임입니다.</span>";
+                        mysqli_free_result($result);
+                        unset($query);
+                    }
                 }
                 break;
             case "password":
