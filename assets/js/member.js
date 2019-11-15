@@ -33,7 +33,7 @@ function join_user() {
         return false;
     }
 
-    document.JoinForm.submit();
+    document.joinForm.submit();
     return true;
 }
 
