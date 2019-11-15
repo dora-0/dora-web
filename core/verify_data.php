@@ -1,6 +1,4 @@
 <?php
-header("Content-Type:application/json");
-
 if ($_SERVER["REQUEST_METHOD"] != "POST") {
     exit;
 }
@@ -88,6 +86,8 @@ $data->user_id = verify_data($_POST["user_id"], "user_id");
 $data->nickname = verify_data($_POST["nickname"], "nickname");
 
 if ($_GET["mode"] === "ajax") {
+    header("Content-Type:application/json");
+
     echo json_encode($data);
     unset($data);
 }
@@ -97,9 +97,6 @@ else if ($_GET["mode"] === "process") {
         header('HTTP/1.1 301 Moved Permanently');
         header('Location: https://azure.mandora.xyz/dora-web/');
         exit;
-    }
-    else {
-
     }
 }
 ?>
