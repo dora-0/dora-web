@@ -9,9 +9,9 @@
             $data->pass->verified &&
             $data->pass_confirm->verified &&
             $data->email->verified)) {
-            echo "<script>alert('비정상적인 접근이 감지되었습니다.');</script>";
-            header('HTTP/1.1 301 Moved Permanently');
-            header('Location: https://azure.mandora.xyz/dora-web/');
+            echo "<script>alert('비정상적인 접근이 감지되었습니다.'); window.location.href = '/dora-web/'</script>";
+//            header('HTTP/1.1 301 Moved Permanently');
+//            header('Location: https://azure.mandora.xyz/dora-web/');
             exit;
         }
 
