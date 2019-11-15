@@ -6,6 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] != "POST") {
 $data = new stdClass();
 
 function verify_data($string, $mode) {
+    global $link;
     $data = new stdClass();
 
     if (!empty($string)) {
@@ -26,9 +27,7 @@ function verify_data($string, $mode) {
                 }
 
                 $query = "SELECT * FROM `users` WHERE user_id='".$_POST["user_id"]."'";
-                if ($result = mysqli_query($GLOBALS['link'], $query, MYSQLI_USE_RESULT)) {
-                    echo "<script>alert('".mysqli_num_rows($result)."')"; //debug
-
+                if ($result = mysqli_query($link, $query, MYSQLI_USE_RESULT)) {
                     if (mysqli_num_rows($result) !== 0) {
                         $data->verified = false;
                         $data->outMsg = "<span class='text-danger'>이미 존재하는 아이디입니다.</span>";
@@ -51,9 +50,7 @@ function verify_data($string, $mode) {
                 }
 
                 $query = "SELECT * FROM `users` WHERE nickname='".$_POST["nickname"]."'";
-                if ($result = mysqli_query($GLOBALS['link'], $query, MYSQLI_USE_RESULT)) {
-                    echo "<script>alert('".mysqli_num_rows($result)."')"; //debug
-
+                if ($result = mysqli_query($link, $query, MYSQLI_USE_RESULT)) {
                     if (mysqli_num_rows($result) !== 0) {
                         $data->verified = false;
                         $data->outMsg = "<span class='text-danger'>이미 존재하는 닉네임입니다.</span>";
