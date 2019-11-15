@@ -115,6 +115,7 @@ if (isset($_GET["mode"])) {
     if ($_GET["mode"] === "ajax") {
         echo json_encode($data);
         unset($data);
+        mysqli_close($link);
         exit;
     }
     else if ($_GET["mode"] === "submit") {
@@ -122,6 +123,7 @@ if (isset($_GET["mode"])) {
         dupe_check();
         echo json_encode($data);
         unset($data);
+        mysqli_close($link);
         exit;
     }
 }

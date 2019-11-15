@@ -14,12 +14,12 @@
         }
 
         $query = "INSERT INTO `users` (user_id, nickname, password, email) VALUES ('".$_POST["user_id"]."', '".$_POST["nickname"]."', PASSWORD('".$_POST["password"]."'), '".$_POST["email"]."')";
-        if (!mysqli_query($_SESSION['link'], $query, MYSQLI_USE_RESULT)) {
+        if (!mysqli_query($link, $query, MYSQLI_USE_RESULT)) {
             echo "<script>alert('".mysqli_error($_SESSION['link'])."')</script>";
             exit;
         }
         unset($query);
-        mysqli_close($_SESSION['link']);
+        mysqli_close($link);
 
         echo "<script>alert('회원가입이 완료되었습니다.'); window.location.href = '/dora-web/'</script>";
 //        header('HTTP/1.1 301 Moved Permanently');
