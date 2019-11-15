@@ -3,7 +3,7 @@ if ($_SERVER["REQUEST_METHOD"] != "POST") {
     exit;
 }
 
-session_start();
+//session_start();
 $data = new stdClass();
 
 function verify_data($string, $mode) {
@@ -27,7 +27,7 @@ function verify_data($string, $mode) {
                 }
 
                 $query = "SELECT * FROM `users` WHERE user_id='".$_POST["user_id"]."'";
-                if ($result = mysqli_query($_SESSION['link'], $query, MYSQLI_USE_RESULT)) {
+                if ($result = mysqli_query($_SESSION['link'], $query, MYSQLI_STORE_RESULT)) {
                     if (mysqli_num_rows($result) !== 0) {
                         $data->verified = false;
                         $data->outMsg = "<span class='text-danger'>이미 존재하는 아이디입니다.</span>";
@@ -51,7 +51,7 @@ function verify_data($string, $mode) {
                 }
 
                 $query = "SELECT * FROM `users` WHERE nickname='".$_POST["nickname"]."'";
-                if ($result = mysqli_query($_SESSION['link'], $query, MYSQLI_USE_RESULT)) {
+                if ($result = mysqli_query($_SESSION['link'], $query, MYSQLI_STORE_RESULT)) {
                     if (mysqli_num_rows($result) !== 0) {
                         $data->verified = false;
                         $data->outMsg = "<span class='text-danger'>이미 존재하는 닉네임입니다.</span>";
@@ -107,7 +107,7 @@ $data->pass = verify_data($_POST["password"], "password");
 $data->pass_confirm = verify_data($_POST["password_confirm"], "password_confirm");
 $data->email = verify_data($_POST["email"], "email");
 
-if ($_GET["mode"] === "ajax") {
+if (isset($_GET["mode"]) && $_GET["mode"] === "ajax") {
     header("Content-Type:application/json");
 
     echo json_encode($data);
