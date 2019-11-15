@@ -27,15 +27,5 @@ function verify_data() {
     });
 }
 
-function join_user() {
-    if (!verify_data()) {
-        // alert('err');
-        return false;
-    }
-
-    document.joinForm.submit();
-    return true;
-}
-
 $('#username').change(verify_data);
 $('#nick').change(verify_data);
