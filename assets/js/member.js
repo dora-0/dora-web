@@ -1,7 +1,7 @@
 function verify_data() {
     var params = $("#JoinForm").serialize();
     var verified = false;
-    return $.ajax({
+    $.ajax({
         url: 'core/verify_data?mode=ajax',
         type: 'POST',
         data: params,
