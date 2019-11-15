@@ -3,7 +3,6 @@ if ($_SERVER["REQUEST_METHOD"] != "POST") {
     exit;
 }
 
-session_start();
 $data = new stdClass();
 
 function verify_data($string, $mode) {
