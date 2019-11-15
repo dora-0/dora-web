@@ -2,7 +2,14 @@ function verify_data(mode = null) {
     var params = $("#JoinForm").serialize();
     var verified = false;
     var requestURI = null;
-    (mode === "submit") ? requestURI = "core/verify_data?mode=submit" : requestURI = "core/verify_data?mode=ajax";
+    if (mode === "submit") {
+        requestURI = "core/verify_data?mode=submit";
+        $('#verify_user_id').html("<span class='text-warning'>아이디 중복 검사 중 ...</span>");
+        $('#verify_nickname').html("<span class='text-warning'>닉네임 중복 검사 중 ...</span>");
+    }
+    else {
+        requestURI = "core/verify_data?mode=ajax";
+    }
     $.ajax({
         url: requestURI,
         type: 'POST',
