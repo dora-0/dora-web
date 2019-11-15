@@ -5,7 +5,6 @@ function verify_data(mode = null) {
         url: 'core/verify_data?mode=ajax',
         type: 'POST',
         data: params,
-        xhrFields: { withCredentials: true },
         dataType: 'json',
         success: function (response) {
             // console.log(response[0]);
