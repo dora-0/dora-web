@@ -15,7 +15,15 @@ function verify_data(mode = null) {
             // console.log(response);
             $('#verify_user_id').html(response.user_id.outMsg);
             $('#verify_nickname').html(response.nickname.outMsg);
-            verified = response.user_id.verified && response.nickname.verified;
+            $('#verify_password').html(response.pass.outMsg);
+            $('#verify_password_confirm').html(response.pass_confirm.outMsg);
+            $('#verify_email').html(response.email.outMsg);
+            verified =
+                response.user_id.verified &&
+                response.nickname.verified &&
+                response.pass.verified &&
+                response.pass_confirm.verified &&
+                response.email.verified;
             if (verified && mode === "submit") {
                 $('#JoinForm').submit();
             }
