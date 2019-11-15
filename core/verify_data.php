@@ -33,6 +33,7 @@ function verify_data($string, $mode) {
                         $data->outMsg = "<span class='text-danger'>이미 존재하는 아이디입니다.</span>";
                         mysqli_free_result($result);
                     }
+
                 }
                 unset($query);
                 break;
