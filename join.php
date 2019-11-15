@@ -1,7 +1,5 @@
 <?php $parent = __FILE__; ?>
 <?php
-    require_once "core/db_init.php";
-
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         include_once "core/verify_data.php?mode=process";
 
