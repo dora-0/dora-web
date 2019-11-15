@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] != "POST") {
 $data = new stdClass();
 
 function verify_data($string, $mode) {
-    global $data;
+    $data = new stdClass();
 
     if (!empty($string)) {
         $data->verified = true;
@@ -31,9 +31,9 @@ function verify_data($string, $mode) {
                         $data->verified = false;
                         $data->outMsg = "<span class='text-danger'>이미 존재하는 아이디입니다.</span>";
                         mysqli_free_result($result);
-                        unset($query);
                     }
                 }
+                unset($query);
                 break;
             case "nickname":
                 $data->outMsg = "<span class='text-success'>사용 가능한 닉네임입니다.</span>";
@@ -54,9 +54,9 @@ function verify_data($string, $mode) {
                         $data->verified = false;
                         $data->outMsg = "<span class='text-danger'>이미 존재하는 닉네임입니다.</span>";
                         mysqli_free_result($result);
-                        unset($query);
                     }
                 }
+                unset($query);
                 break;
             case "password":
                 $data->outMsg = "<span class='text-success'>사용 가능한 비밀번호입니다.</span>";
