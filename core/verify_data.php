@@ -111,7 +111,6 @@ if ($_GET["mode"] === "ajax") {
 
     echo json_encode($data);
     unset($data);
-    mysqli_close($link);
     exit;
 }
 else if ($_GET["mode"] === "process") {
