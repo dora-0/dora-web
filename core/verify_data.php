@@ -27,13 +27,7 @@ function verify_data($string, $mode) {
                 }
 
                 $query = "SELECT * FROM `users` WHERE user_id='".$_POST["user_id"]."'";
-                $host = "localhost";
-                $user = "dora-web";
-                $password = "GSGMFGWHOjrvQwZa";
-                $dbname = "dora-web";
-                $port = 3306;
-                $tmp_link = mysqli_connect($host, $user, $password, $dbname, $port);
-                if ($result = mysqli_query($tmp_link, $query, MYSQLI_STORE_RESULT)) {
+                if ($result = mysqli_query($_SESSION['link'], $query, MYSQLI_STORE_RESULT)) {
                     if (mysqli_num_rows($result) !== 0) {
                         $data->verified = false;
                         $data->outMsg = "<span class='text-danger'>이미 존재하는 아이디입니다.</span>";
