@@ -1,4 +1,4 @@
-function verify_data(mode) {
+function verify_data(mode = null) {
     var params = $("#JoinForm").serialize();
     var verified = false;
     $.ajax({
@@ -26,5 +26,5 @@ function verify_data(mode) {
     });
 }
 
-$('#username').change(verify_data('ajax'));
-$('#nick').change(verify_data('ajax'));
+$('#username').change(verify_data);
+$('#nick').change(verify_data);
