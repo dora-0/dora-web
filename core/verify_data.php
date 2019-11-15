@@ -114,16 +114,5 @@ if ($_GET["mode"] === "ajax") {
     unset($data);
     exit;
 }
-else if ($_GET["mode"] === "process") {
-    if (!($data->user_id->verified &&
-        $data->nickname->verified &&
-        $data->pass->verified &&
-        $data->pass_confirm->verified &&
-        $data->email->verified)) {
-        echo "<script>alert('비정상적인 접근이 감지되었습니다.');</script>";
-        header('HTTP/1.1 301 Moved Permanently');
-        header('Location: https://azure.mandora.xyz/dora-web/');
-        exit;
-    }
-}
+
 ?>
