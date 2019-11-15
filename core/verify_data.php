@@ -3,7 +3,7 @@ if ($_SERVER["REQUEST_METHOD"] != "POST") {
     exit;
 }
 
-require_once "core/db_init.php";
+require_once "db_init.php";
 $data = new stdClass();
 
 function verify_data($string, $mode) {
@@ -111,6 +111,8 @@ if ($_GET["mode"] === "ajax") {
 
     echo json_encode($data);
     unset($data);
+    mysqli_close($link);
+    exit;
 }
 else if ($_GET["mode"] === "process") {
     if (!($data->user_id->verified &&
