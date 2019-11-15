@@ -2,7 +2,7 @@ function verify_data(mode = null) {
     var params = $("#JoinForm").serialize();
     var verified = false;
     var requestURI = null;
-    (mode === "submit") ? requestURI = "core/verify_data" : requestURI = "core/verify_data?mode=ajax";
+    (mode === "submit") ? requestURI = "core/verify_data?mode=submit" : requestURI = "core/verify_data?mode=ajax";
     $.ajax({
         url: requestURI,
         type: 'POST',

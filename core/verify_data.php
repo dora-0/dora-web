@@ -85,23 +85,14 @@ $data->pass = verify_data($_POST["password"], "password");
 $data->pass_confirm = verify_data($_POST["password_confirm"], "password_confirm");
 $data->email = verify_data($_POST["email"], "email");
 
-if (isset($_GET["mode"])) {
-    if ($_GET["mode"] === "ajax") {
-        header("Content-Type:application/json");
-
-        echo json_encode($data);
-        unset($data);
-        exit;
-    }
-}
-else {
-    require_once "db_init.php";
+function dupe_check() {
+    global $data, $link;
 
     $query = "SELECT * FROM `users` WHERE user_id='".$_POST["user_id"]."'";
     if ($result = mysqli_query($link, $query, MYSQLI_STORE_RESULT)) {
         if (mysqli_num_rows($result) !== 0) {
-            $data->verified = false;
-            $data->outMsg = "<span class='text-danger'>이미 존재하는 아이디입니다.</span>";
+            $data->user_id->verified = false;
+            $data->user_id->outMsg = "<span class='text-danger'>이미 존재하는 아이디입니다.</span>";
             mysqli_free_result($result);
         }
     }
@@ -110,11 +101,32 @@ else {
     $query = "SELECT * FROM `users` WHERE nickname='".$_POST["nickname"]."'";
     if ($result = mysqli_query($link, $query, MYSQLI_STORE_RESULT)) {
         if (mysqli_num_rows($result) !== 0) {
-            $data->verified = false;
-            $data->outMsg = "<span class='text-danger'>이미 존재하는 닉네임입니다.</span>";
+            $data->nickname->verified = false;
+            $data->nickname->outMsg = "<span class='text-danger'>이미 존재하는 닉네임입니다.</span>";
             mysqli_free_result($result);
         }
     }
     unset($query);
+}
+
+if (isset($_GET["mode"])) {
+    header("Content-Type:application/json");
+
+    if ($_GET["mode"] === "ajax") {
+        echo json_encode($data);
+        unset($data);
+        exit;
+    }
+    else if ($_GET["mode"] === "submit") {
+        require_once "db_init.php";
+        dupe_check();
+        echo json_encode($data);
+        unset($data);
+        exit;
+    }
+}
+else {
+    require_once "db_init.php";
+    dupe_check();
 }
 ?>
