@@ -2,7 +2,7 @@ function verify_data() {
     var params = $("#JoinForm").serialize();
     var verified = false;
     $.ajax({
-        url: 'ajax/verify_data',
+        url: 'core/verify_data?mode=ajax',
         type: 'POST',
         data: params,
         dataType: 'json',
@@ -26,7 +26,7 @@ function verify_data() {
 
 function join_user() {
     if (!verify_data()) {
-        alert('err');
+        // alert('err');
         return false;
     }
 

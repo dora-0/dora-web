@@ -6,9 +6,6 @@ if ($_SERVER["REQUEST_METHOD"] != "POST") {
     exit;
 }
 
-$data = new stdClass();
-//$arr = array();
-
 function verify_data($string, $mode) {
     $data = new stdClass();
 
@@ -54,11 +51,15 @@ function verify_data($string, $mode) {
     return $data;
 }
 
-$data->user_id = verify_data($_POST["user_id"], "user_id");
-$data->nickname = verify_data($_POST["nickname"], "nickname");
+if ($_GET["mode"] === "ajax") {
+    $data = new stdClass();
+
+    $data->user_id = verify_data($_POST["user_id"], "user_id");
+    $data->nickname = verify_data($_POST["nickname"], "nickname");
 //$arr[] = $data;
 //echo json_encode($arr);
-echo json_encode($data);
+    echo json_encode($data);
 //unset($arr, $data);
-unset($data);
+    unset($data);
+}
 ?>
