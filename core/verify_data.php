@@ -3,8 +3,10 @@ if ($_SERVER["REQUEST_METHOD"] != "POST") {
     exit;
 }
 
+$data = new stdClass();
+
 function verify_data($string, $mode) {
-    $data = new stdClass();
+    global $data;
 
     if (!empty($string)) {
         $data->verified = true;
