@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="form-group"><label for="password">비밀번호</label><input class="form-control item" type="password" id="password" name="password"></div>
                 <div class="form-group"><label for="password_confirm">비밀번호 확인</label><input class="form-control item" type="password" id="password_confirm" name="password_confirm"></div>
                 <div class="form-group"><label for="nick">닉네임</label><input class="form-control item" type="text" id="nick" name="nickname"><label id="verify_nickname"></label></div>
-                <div class="form-group"><label for="email">E-mail</label><input class="form-control item" type="email" id="email" name="email"></div><button class="btn btn-success btn-block" type="button" onclick="join_user()">회원가입</button>
+                <div class="form-group"><label for="email">E-mail</label><input class="form-control item" type="email" id="email" name="email"></div><button class="btn btn-success btn-block" type="button" onclick="verify_data('submit')">회원가입</button>
             </form>
         </div>
     </section>
@@ -47,17 +47,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <script src="assets/js/smoothproducts.min.js"></script>
 <script src="assets/js/theme.js"></script>
 <script src="assets/js/member.js"></script>
-<script>
-    function join_user() {
-        if (!verify_data()) {
-            // alert('err');
-            return false;
-        }
-
-        document.joinForm.submit();
-        return true;
-    }
-</script>
 </body>
 
 </html>

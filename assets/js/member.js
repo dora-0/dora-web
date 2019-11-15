@@ -1,4 +1,4 @@
-function verify_data() {
+function verify_data(mode) {
     var params = $("#JoinForm").serialize();
     var verified = false;
     $.ajax({
@@ -16,16 +16,15 @@ function verify_data() {
             $('#verify_user_id').html(response.user_id.outMsg);
             $('#verify_nickname').html(response.nickname.outMsg);
             verified = response.user_id.verified && response.nickname.verified;
-
-            console.log("verified: " + verified);
-            return verified;
+            if (verified && mode === "submit") {
+                $('#JoinForm').submit();
+            }
         },
         error: function (jqXHR) {
             alert("Ajax 오류가 발생했습니다. (Error Code: " + jqXHR.status + ")");
-            return false;
         }
     });
 }
 
-$('#username').change(verify_data);
-$('#nick').change(verify_data);
+$('#username').change(verify_data('ajax'));
+$('#nick').change(verify_data('ajax'));
