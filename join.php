@@ -1,6 +1,10 @@
 <?php $parent = __FILE__; ?>
 <?php
+    session_start();
     require_once "core/db_init.php";
+
+    //register session variables
+    $_SESSION['link'] = $link;
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         require_once "core/verify_data.php";
