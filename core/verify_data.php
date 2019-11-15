@@ -3,7 +3,6 @@ if ($_SERVER["REQUEST_METHOD"] != "POST") {
     exit;
 }
 
-session_start();
 $data = new stdClass();
 
 function verify_data($string, $mode) {
@@ -25,17 +24,6 @@ function verify_data($string, $mode) {
                     $data->verified = false;
                     $data->outMsg = "<span class='text-danger'>아이디의 길이는 최대 20자까지만 허용됩니다.</span>";
                 }
-
-                $query = "SELECT * FROM `users` WHERE user_id='".$_POST["user_id"]."'";
-                if ($result = mysqli_query($_SESSION['link'], $query, MYSQLI_STORE_RESULT)) {
-                    if (mysqli_num_rows($result) !== 0) {
-                        $data->verified = false;
-                        $data->outMsg = "<span class='text-danger'>이미 존재하는 아이디입니다.</span>";
-                        mysqli_free_result($result);
-                    }
-
-                }
-                unset($query);
                 break;
             case "nickname":
                 $data->outMsg = "<span class='text-success'>사용 가능한 닉네임입니다.</span>";
@@ -49,16 +37,6 @@ function verify_data($string, $mode) {
                     $data->verified = false;
                     $data->outMsg = "<span class='text-danger'>닉네임의 길이는 최대 20자까지만 허용됩니다.</span>";
                 }
-
-                $query = "SELECT * FROM `users` WHERE nickname='".$_POST["nickname"]."'";
-                if ($result = mysqli_query($_SESSION['link'], $query, MYSQLI_STORE_RESULT)) {
-                    if (mysqli_num_rows($result) !== 0) {
-                        $data->verified = false;
-                        $data->outMsg = "<span class='text-danger'>이미 존재하는 닉네임입니다.</span>";
-                        mysqli_free_result($result);
-                    }
-                }
-                unset($query);
                 break;
             case "password":
                 $data->outMsg = "<span class='text-success'>사용 가능한 비밀번호입니다.</span>";
@@ -107,12 +85,36 @@ $data->pass = verify_data($_POST["password"], "password");
 $data->pass_confirm = verify_data($_POST["password_confirm"], "password_confirm");
 $data->email = verify_data($_POST["email"], "email");
 
-if (isset($_GET["mode"]) && $_GET["mode"] === "ajax") {
-    header("Content-Type:application/json");
+if (isset($_GET["mode"])) {
+    if ($_GET["mode"] === "ajax") {
+        header("Content-Type:application/json");
 
-    echo json_encode($data);
-    unset($data);
-    exit;
+        echo json_encode($data);
+        unset($data);
+        exit;
+    }
 }
+else {
+    require_once "core/db_init.php";
 
+    $query = "SELECT * FROM `users` WHERE user_id='".$_POST["user_id"]."'";
+    if ($result = mysqli_query($link, $query, MYSQLI_STORE_RESULT)) {
+        if (mysqli_num_rows($result) !== 0) {
+            $data->verified = false;
+            $data->outMsg = "<span class='text-danger'>이미 존재하는 아이디입니다.</span>";
+            mysqli_free_result($result);
+        }
+    }
+    unset($query);
+
+    $query = "SELECT * FROM `users` WHERE nickname='".$_POST["nickname"]."'";
+    if ($result = mysqli_query($link, $query, MYSQLI_STORE_RESULT)) {
+        if (mysqli_num_rows($result) !== 0) {
+            $data->verified = false;
+            $data->outMsg = "<span class='text-danger'>이미 존재하는 닉네임입니다.</span>";
+            mysqli_free_result($result);
+        }
+    }
+    unset($query);
+}
 ?>
