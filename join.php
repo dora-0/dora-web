@@ -3,7 +3,17 @@
     require_once "core/db_init.php";
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        include_once "core/verify_data.php?mode=process";
+        require_once "core/verify_data.php";
+        if (!($data->user_id->verified &&
+            $data->nickname->verified &&
+            $data->pass->verified &&
+            $data->pass_confirm->verified &&
+            $data->email->verified)) {
+            echo "<script>alert('비정상적인 접근이 감지되었습니다.');</script>";
+            header('HTTP/1.1 301 Moved Permanently');
+            header('Location: https://azure.mandora.xyz/dora-web/');
+            exit;
+        }
 
         $query = "INSERT INTO `users` (user_id, nickname, password, email) VALUES ('".$_POST["user_id"]."', '".$_POST["nickname"]."', PASSWORD('".$_POST["password"]."'), '".$_POST["email"]."')";
         if (!mysqli_query($_SESSION['link'], $query, MYSQLI_USE_RESULT)) {
