@@ -30,6 +30,6 @@
             $("#notify-section").html("<img alt='연결 실패' style='max-width: 128px' src='assets/img/broken-link.png' /><br/><h3 class='title'>연결에 실패했습니다.</h3>");
         }
     </script>
-    <script src="https://azure.mandora.xyz:3001/socket.io/socket.io.js" onload="init_login()" onerror="load_error()"></script>
-    <script src="https://azure.mandora.xyz:3001/public/main.js"></script>
+    <script src="https://chat.mandora.xyz/socket.io/socket.io.js" onload="init_login()" onerror="load_error()"></script>
+    <script src="https://chat.mandora.xyz/public/main.js"></script>
 <?php endif; ?>
