@@ -1,7 +1,7 @@
 <Files *>
 order deny,allow
 deny from all
-allow from .*mandora\.xyz.*
+allow from .*azure\.mandora\.xyz.*
 </Files>
 
 RewriteEngine on
