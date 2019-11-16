@@ -1,8 +1,4 @@
-<Files *>
-order deny,allow
-deny from all
-allow from .*azure\.mandora\.xyz.*
-</Files>
+Options -Indexes
 
 RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-d
@@ -11,4 +7,4 @@ RewriteRule ^(.*)$ $1.php [L]
 RewriteRule \.(md|config)$ - [NC,F,L]
 RewriteCond %{HTTP_REFERER} !^$
 RewriteCond %{HTTP_REFERER} !^http(s)?://(azure\.)?mandora.xyz [NC]
-RewriteRule ^(.*)$ - [NC,F,L]
+RewriteRule ^ - [NC,F,L]
