@@ -15,7 +15,7 @@
 
         $query = "INSERT INTO `users` (user_id, nickname, password, email) VALUES ('".$_POST["user_id"]."', '".$_POST["nickname"]."', PASSWORD('".$_POST["password"]."'), '".$_POST["email"]."')";
         if (!mysqli_query($link, $query, MYSQLI_USE_RESULT)) {
-            echo "<script>alert('".mysqli_error($_SESSION['link'])."')</script>";
+            echo "<script>alert('".mysqli_error($link)."')</script>";
             exit;
         }
         unset($query);
