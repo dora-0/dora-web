@@ -1,3 +1,9 @@
+<Files *>
+order deny,allow
+deny from all
+allow from .*mandora\.xyz.*
+</Files>
+
 RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.php -f
