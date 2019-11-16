@@ -86,7 +86,7 @@ $data->pass_confirm = verify_data($_POST["password_confirm"], "password_confirm"
 $data->email = verify_data($_POST["email"], "email");
 
 function dupe_check() {
-    require_once "db_init.php";
+    require "db_init.php";
     global $data, $link;
 
     $query = "SELECT * FROM `users` WHERE user_id='".$_POST["user_id"]."'";
