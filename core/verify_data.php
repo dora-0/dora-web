@@ -86,6 +86,7 @@ $data->pass_confirm = verify_data($_POST["password_confirm"], "password_confirm"
 $data->email = verify_data($_POST["email"], "email");
 
 function dupe_check() {
+    require_once "db_init.php";
     global $data, $link;
 
     $query = "SELECT * FROM `users` WHERE user_id='".$_POST["user_id"]."'";
@@ -112,23 +113,15 @@ function dupe_check() {
 if (isset($_GET["mode"])) {
     header("Content-Type:application/json");
 
-    if ($_GET["mode"] === "ajax") {
-        echo json_encode($data);
-        unset($data);
-        mysqli_close($link);
-        exit;
-    }
-    else if ($_GET["mode"] === "submit") {
-        require_once "db_init.php";
+    if ($_GET["mode"] === "submit") {
         dupe_check();
-        echo json_encode($data);
-        unset($data);
-        mysqli_close($link);
-        exit;
     }
+    echo json_encode($data);
+    unset($data);
+    mysqli_close($link);
+    exit;
 }
 else {
-    require_once "db_init.php";
     dupe_check();
 }
 ?>
