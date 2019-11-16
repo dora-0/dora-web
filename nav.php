@@ -4,11 +4,11 @@
             <div class="collapse navbar-collapse"
                  id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link <?php if ($parent === "/var/www/html/public/dora-web/index") echo "active"; ?>" href="index">Home</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link <?php if ($parent === "/var/www/html/public/dora-web/about") echo "active"; ?>" href="about">Features</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link <?php if ($parent === "/var/www/html/public/dora-web/blog-post-list") echo "active"; ?>" href="blog-post-list">Blog</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link <?php if ($parent === "/var/www/html/public/dora-web/chat") echo "active"; ?>" href="chat">Chat</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link <?php if ($parent === "/var/www/html/public/dora-web/login") echo "active"; ?>" href="login">Login</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link <?php if ($parent === "/home/site/wwwroot/index.php") echo "active"; ?>" href="index">Home</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link <?php if ($parent === "/home/site/wwwroot/about.php") echo "active"; ?>" href="about">Features</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link <?php if ($parent === "/home/site/wwwroot/blog-post-list.php") echo "active"; ?>" href="blog-post-list">Blog</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link <?php if ($parent === "/home/site/wwwroot/chat.php") echo "active"; ?>" href="chat">Chat</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link <?php if ($parent === "/home/site/wwwroot/login.php") echo "active"; ?>" href="login">Login</a></li>
                 </ul>
             </div>
         </div>
