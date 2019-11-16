@@ -1,9 +1,9 @@
 <?php
-$host = "localhost";
+$host = "azure-legacy.mandora.xyz";
 $user = "dora-web";
 $password = "GSGMFGWHOjrvQwZa";
 $dbname = "dora-web";
-$port = 3306;
+$port = 39148;
 
 $link = mysqli_connect($host, $user, $password, $dbname, $port);
 
