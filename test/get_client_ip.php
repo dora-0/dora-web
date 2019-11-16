@@ -1,5 +1,5 @@
 <?php
-header("Content-Type:application/json");
+//header("Content-Type:application/json");
 
 function getRealIpAddr(){
     if(!empty($_SERVER['HTTP_CLIENT_IP']) && getenv('HTTP_CLIENT_IP')){
@@ -17,5 +17,6 @@ function getRealIpAddr(){
     return false;
 }
 
-$ip_addr = getRealIpAddr();
+//$ip_addr = getRealIpAddr();
+echo getRealIpAddr();
 ?>
