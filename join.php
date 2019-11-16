@@ -7,7 +7,7 @@
             $data->pass->verified &&
             $data->pass_confirm->verified &&
             $data->email->verified)) {
-            echo "<script>alert('비정상적인 접근이 감지되었습니다.'); window.location.href = '/dora-web/'</script>";
+            echo "<script>alert('비정상적인 접근이 감지되었습니다.'); window.location.href = '/'</script>";
 //            header('HTTP/1.1 301 Moved Permanently');
 //            header('Location: https://azure.mandora.xyz/dora-web/');
             exit;
@@ -15,13 +15,14 @@
 
         $query = "INSERT INTO `users` (user_id, nickname, password, email) VALUES ('".$_POST["user_id"]."', '".$_POST["nickname"]."', PASSWORD('".$_POST["password"]."'), '".$_POST["email"]."')";
         if (!mysqli_query($link, $query, MYSQLI_USE_RESULT)) {
-            echo "<script>alert('".mysqli_error($link)."')</script>";
+            trigger_error("Query operation failed on DB server. mysqli_error() reported as follows: ".mysqli_error($link), E_USER_WARNING);
+            echo "<script>alert('회원가입 진행 중 문제가 발생하였습니다. 관리자에게 문의하세요.'); window.location.href = '/'</script>";
             exit;
         }
         unset($query);
         mysqli_close($link);
 
-        echo "<script>alert('회원가입이 완료되었습니다.'); window.location.href = '/dora-web/'</script>";
+        echo "<script>alert('회원가입이 완료되었습니다.'); window.location.href = '/'</script>";
 //        header('HTTP/1.1 301 Moved Permanently');
 //        header('Location: https://azure.mandora.xyz/dora-web/');
         exit;
