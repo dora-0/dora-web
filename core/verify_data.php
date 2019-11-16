@@ -112,20 +112,15 @@ function dupe_check() {
 if (isset($_GET["mode"])) {
     header("Content-Type:application/json");
 
-    if ($_GET["mode"] === "ajax") {
-        echo json_encode($data);
-        unset($data);
-        mysqli_close($link);
-        exit;
-    }
-    else if ($_GET["mode"] === "submit") {
-        require_once "db_init.php";
+    if ($_GET["mode"] === "submit") {
+        require "db_init.php";
         dupe_check();
-        echo json_encode($data);
-        unset($data);
         mysqli_close($link);
-        exit;
     }
+
+    echo json_encode($data);
+    unset($data);
+    exit;
 }
 else {
     require_once "db_init.php";
