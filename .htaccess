@@ -1,7 +1,8 @@
 RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.php -f
-RewriteRule ^(.*)$ $1.php
+RewriteRule ^(.*)$ $1.php [L]
+RewriteRule \.(md|config)$ - [NC,F,L]
 RewriteCond %{HTTP_REFERER} !^$
 RewriteCond %{HTTP_REFERER} !^http(s)?://(azure\.)?mandora.xyz [NC]
-RewriteRule \.(md|config)$ - [NC,F,L]
+RewriteRule ^(.*)$ - [NC,F,L]
