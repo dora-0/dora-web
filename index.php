@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <?php $parent = __FILE__; ?>
 
 <!DOCTYPE html>
