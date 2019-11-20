@@ -9,8 +9,13 @@
         </li>
         <li id="login-section" class="login page">
             <div class="form">
+                <?php if (isset($_SESSION["nickname"])): ?>
+                <h3 class="title">환영합니다, <?=$_SESSION["nickname"]?>님!<br/>Enter 키를 눌러 채널에 입장하세요.</h3>
+                <input class="usernameInput" type="hidden" value="<?=$_SESSION["nickname"]?>" />
+                <?php else: ?>
                 <h3 class="title">닉네임을 입력하세요.</h3>
                 <input class="usernameInput" type="text" maxlength="14" />
+                <?php endif; ?>
             </div>
         </li>
         <li id="load-section" class="load page">
