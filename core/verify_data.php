@@ -3,6 +3,14 @@ if ($_SERVER["REQUEST_METHOD"] != "POST") {
     exit;
 }
 
+if (isset($mode)) {
+    $_GET["mode"] = $mode;
+}
+
+if (isset($db_check)) {
+    $_GET["db_check"] = $db_check;
+}
+
 $data = new stdClass();
 
 function verify_data($string, $mode) {

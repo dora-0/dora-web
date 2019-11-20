@@ -1,7 +1,9 @@
 <?php $parent = __FILE__; ?>
 <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        require_once "core/verify_data.php?mode=join&db_check=true";
+        $mode = "join";
+        $db_check = "true";
+        require_once "core/verify_data.php";
         if (!($data->user_id->verified &&
             $data->nickname->verified &&
             $data->pass->verified &&
