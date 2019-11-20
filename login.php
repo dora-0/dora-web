@@ -64,10 +64,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <form id="loginForm" method="post" action="login">
                 <?php
                 if (isset($_GET["redirect_url"])) {
-                    echo "<input type='hidden' name='redirect_url' value='".$_GET["redirect_url"]."' />";
+                    echo "<input type='hidden' name='redirect_url' value='".$_GET["redirect_url"]."' />\n";
                 }
                 else if (isset($_POST["redirect_url"])) {
-                    echo "<input type='hidden' name='redirect_url' value='".$_POST["redirect_url"]."' />";
+                    echo "<input type='hidden' name='redirect_url' value='".$_POST["redirect_url"]."' />\n";
                 }
                 ?>
                 <div class="form-group"><label for="username">아이디</label><input class="form-control item" type="text" id="username" name="user_id"><label id="verify_user_id"></label></div>
