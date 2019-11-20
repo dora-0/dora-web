@@ -52,7 +52,7 @@ else {
         <div class="container">
             <div class="block-heading">
                 <h2 class="text-success">로그인</h2>
-                <?php if ($verify_login === false): ?>
+                <?php if (isset($verify_login) && $verify_login === false): ?>
                 <p class='text-danger'>아이디 또는 비밀번호가 일치하지 않습니다.</p>
                 <?php else: ?>
                 <p>계속하려면 로그인하세요.</p>
