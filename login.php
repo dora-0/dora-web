@@ -15,8 +15,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result = mysqli_query($link, $query, MYSQLI_STORE_RESULT)) {
         switch (mysqli_num_rows($result)) {
             case 1:
+                $row = mysqli_fetch_array($result);
+
+                //register session variables
                 $redirect_url = "/";
-                $_SESSION["user_id"] = $_POST["user_id"];
+                $_SESSION["user_id"] = $row["user_id"];
+                $_SESSION["nickname"] = $row["nickname"];
+                $_SESSION["email"] = $row["email"];
+
                 if (isset($_POST["redirect_url"])) {
                     $redirect_url = $_POST["redirect_url"];
                 }
