@@ -5,10 +5,12 @@ if ($_SERVER["REQUEST_METHOD"] != "POST") {
 
 if (isset($mode)) {
     $_GET["mode"] = $mode;
+    unset($mode);
 }
 
 if (isset($db_check)) {
     $_GET["db_check"] = $db_check;
+    unset($db_check);
 }
 
 $data = new stdClass();

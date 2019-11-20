@@ -3,6 +3,10 @@ session_start();
 ?>
 <?php $parent = __FILE__; ?>
 <?php
+if (isset($_SESSION["user_id"])) {
+    header('Location: /');
+    exit;
+}
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require "core/db_init.php";
 

@@ -3,35 +3,39 @@ session_start();
 ?>
 <?php $parent = __FILE__; ?>
 <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $mode = "join";
-        $db_check = "true";
-        require_once "core/verify_data.php";
-        if (!($data->user_id->verified &&
-            $data->nickname->verified &&
-            $data->pass->verified &&
-            $data->pass_confirm->verified &&
-            $data->email->verified)) {
-            echo "<script>alert('비정상적인 접근이 감지되었습니다.'); window.location.href = '/'</script>";
+if (isset($_SESSION["user_id"])) {
+    header('Location: /');
+    exit;
+}
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $mode = "join";
+    $db_check = "true";
+    require_once "core/verify_data.php";
+    if (!($data->user_id->verified &&
+        $data->nickname->verified &&
+        $data->pass->verified &&
+        $data->pass_confirm->verified &&
+        $data->email->verified)) {
+        echo "<script>alert('비정상적인 접근이 감지되었습니다.'); window.location.href = '/'</script>";
 //            header('HTTP/1.1 301 Moved Permanently');
 //            header('Location: https://azure.mandora.xyz/dora-web/');
-            exit;
-        }
-
-        $query = "INSERT INTO `users` (user_id, nickname, password, email) VALUES ('".$_POST["user_id"]."', '".$_POST["nickname"]."', PASSWORD('".$_POST["password"]."'), '".$_POST["email"]."')";
-        if (!mysqli_query($link, $query, MYSQLI_USE_RESULT)) {
-            trigger_error("Query operation failed on DB server. mysqli_error() reported as follows: ".mysqli_error($link), E_USER_WARNING);
-            echo "<script>alert('회원가입 진행 중 문제가 발생하였습니다. 관리자에게 문의하세요.'); window.location.href = '/'</script>";
-            exit;
-        }
-        unset($query);
-        mysqli_close($link);
-
-        echo "<script>alert('회원가입이 완료되었습니다.'); window.location.href = '/'</script>";
-//        header('HTTP/1.1 301 Moved Permanently');
-//        header('Location: https://azure.mandora.xyz/dora-web/');
         exit;
     }
+
+    $query = "INSERT INTO `users` (user_id, nickname, password, email) VALUES ('".$_POST["user_id"]."', '".$_POST["nickname"]."', PASSWORD('".$_POST["password"]."'), '".$_POST["email"]."')";
+    if (!mysqli_query($link, $query, MYSQLI_USE_RESULT)) {
+        trigger_error("Query operation failed on DB server. mysqli_error() reported as follows: ".mysqli_error($link), E_USER_WARNING);
+        echo "<script>alert('회원가입 진행 중 문제가 발생하였습니다. 관리자에게 문의하세요.'); window.location.href = '/'</script>";
+        exit;
+    }
+    unset($query);
+    mysqli_close($link);
+
+    echo "<script>alert('회원가입이 완료되었습니다.'); window.location.href = '/'</script>";
+//        header('HTTP/1.1 301 Moved Permanently');
+//        header('Location: https://azure.mandora.xyz/dora-web/');
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="ko">
