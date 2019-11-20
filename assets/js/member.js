@@ -2,13 +2,13 @@ function verify_data(mode = null) {
     var params = $("#JoinForm").serialize();
     var verified = false;
     var requestURI = null;
-    if (mode === "submit") {
-        requestURI = "core/verify_data?mode=submit";
+    if (mode === "join") {
+        requestURI = "core/verify_data?mode=join&type=ajax&db_check=true";
         $('#verify_user_id').html("<span class='text-warning'>아이디 중복 검사 중 ...</span>");
         $('#verify_nickname').html("<span class='text-warning'>닉네임 중복 검사 중 ...</span>");
     }
     else {
-        requestURI = "core/verify_data?mode=ajax";
+        requestURI = "core/verify_data?mode=join&type=ajax";
     }
     $.ajax({
         url: requestURI,
@@ -21,7 +21,7 @@ function verify_data(mode = null) {
             // $('#verify_nickname').html(response[0].nickname.outMsg);
             // verified = response[0].user_id.verified && response[0].nickname.verified;
 
-            console.log(response);
+            // console.log(response);
             $('#verify_user_id').html(response.user_id.outMsg);
             $('#verify_nickname').html(response.nickname.outMsg);
             $('#verify_password').html(response.pass.outMsg);

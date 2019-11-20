@@ -79,12 +79,6 @@ function verify_data($string, $mode) {
     return $data;
 }
 
-$data->user_id = verify_data($_POST["user_id"], "user_id");
-$data->nickname = verify_data($_POST["nickname"], "nickname");
-$data->pass = verify_data($_POST["password"], "password");
-$data->pass_confirm = verify_data($_POST["password_confirm"], "password_confirm");
-$data->email = verify_data($_POST["email"], "email");
-
 function dupe_check() {
     global $data, $link;
 
@@ -109,21 +103,31 @@ function dupe_check() {
     unset($query);
 }
 
-if (isset($_GET["mode"])) {
-    header("Content-Type:application/json");
 
-    if ($_GET["mode"] === "submit") {
-        require "db_init.php";
-        dupe_check();
-        mysqli_close($link);
-    }
+$data->user_id = verify_data($_POST["user_id"], "user_id");
+$data->pass = verify_data($_POST["password"], "password");
+if ($_GET["mode"] === "join") {
+    $data->nickname = verify_data($_POST["nickname"], "nickname");
+    $data->pass_confirm = verify_data($_POST["password_confirm"], "password_confirm");
+    $data->email = verify_data($_POST["email"], "email");
+}
 
-    echo json_encode($data);
-    unset($data);
+if ($_GET["mode"] === "join" && $_GET["db_check"] === "true") {
+    require "db_init.php";
+    dupe_check();
+}
+else if ($_GET["db_check"] === "true") {
+    trigger_error("잘못된 인자 값이 제공되었습니다. verify_data.php: db_check=true 이려면 mode=join 이어야 합니다.", E_USER_WARNING);
     exit;
 }
-else {
-    require_once "db_init.php";
-    dupe_check();
+
+if ($_GET["type"] === "ajax") {
+    header("Content-Type:application/json");
+    echo json_encode($data);
+    if ($_GET["db_check"] === "true") {
+        mysqli_close($link);
+    }
+    unset($data);
+    exit;
 }
 ?>
