@@ -3,7 +3,7 @@ function verify_login(mode = null) {
     var verified = false;
 
     $.ajax({
-        url: "core/verify_login?mode=login&type=ajax",
+        url: "core/verify_data?mode=login&type=ajax",
         type: 'POST',
         data: params,
         dataType: 'json',

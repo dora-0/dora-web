@@ -112,6 +112,7 @@ function dupe_check() {
 }
 
 
+
 $data->user_id = verify_data($_POST["user_id"], "user_id");
 $data->pass = verify_data($_POST["password"], "password");
 if ($_GET["mode"] === "join") {
@@ -123,6 +124,10 @@ if ($_GET["mode"] === "join") {
 if ($_GET["mode"] === "join" && $_GET["db_check"] === "true") {
     require "db_init.php";
     dupe_check();
+}
+else if ($_GET["mode"] === "login" && $_GET["type"] !== "ajax") {
+    trigger_error("잘못된 인자 값이 제공되었습니다. verify_data.php: mode=login 이려면 type=ajax 이어야 합니다.", E_USER_WARNING);
+    exit;
 }
 else if ($_GET["db_check"] === "true") {
     trigger_error("잘못된 인자 값이 제공되었습니다. verify_data.php: db_check=true 이려면 mode=join 이어야 합니다.", E_USER_WARNING);
