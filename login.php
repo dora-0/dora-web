@@ -66,6 +66,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if (isset($_GET["redirect_url"])) {
                     echo "<input type='hidden' name='redirect_url' value='".$_GET["redirect_url"]."' />";
                 }
+                else if (isset($_POST["redirect_url"])) {
+                    echo "<input type='hidden' name='redirect_url' value='".$_POST["redirect_url"]."' />";
+                }
                 ?>
                 <div class="form-group"><label for="username">아이디</label><input class="form-control item" type="text" id="username" name="user_id"><label id="verify_user_id"></label></div>
                 <div class="form-group"><label for="password">비밀번호</label><input class="form-control" type="password" id="password" name="password"><label id="verify_password"></label></div>
