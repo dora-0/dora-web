@@ -13,7 +13,7 @@
                 <h3 class="title">환영합니다, <?=$_SESSION["nickname"]?>님!<br/>Enter 키를 눌러 채널에 입장하세요.</h3>
                 <input class="usernameInput" type="hidden" value="<?=$_SESSION["nickname"]?>" />
                 <?php else: ?>
-                <h3 class="title">닉네임을 입력하세요.</h3>
+                <h3 id="usernameMsg" class="title">닉네임을 입력하세요.</h3>
                 <input class="usernameInput" type="text" maxlength="14" />
                 <?php endif; ?>
             </div>
