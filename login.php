@@ -78,9 +78,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 ?>
                 <div class="form-group"><label for="username">아이디</label><input class="form-control item" type="text" id="username" name="user_id"><label id="verify_user_id"></label></div>
                 <div class="form-group"><label for="password">비밀번호</label><input class="form-control" type="password" id="password" name="password"><label id="verify_password"></label></div>
-<!--                <div class="form-group">-->
-<!--                    <div class="form-check"><input class="form-check-input" type="checkbox" id="checkbox"><label class="form-check-label" for="checkbox">자동 로그인</label></div>-->
-<!--                </div>-->
+                <!--                <div class="form-group">-->
+                <!--                    <div class="form-check"><input class="form-check-input" type="checkbox" id="checkbox"><label class="form-check-label" for="checkbox">자동 로그인</label></div>-->
+                <!--                </div>-->
                 <button class="btn btn-success btn-block" type="submit">로그인</button>
                 <button class="btn btn-block btn-outline-success" type="button" onclick="location.href = 'join'">회원가입</button>
             </form>
