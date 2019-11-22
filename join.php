@@ -1,7 +1,7 @@
 <?php
 session_start();
 ?>
-<?php $parent = __FILE__; ?>
+<?php $parent = basename(__FILE__); ?>
 <?php
 if (isset($_SESSION["user_id"])) {
     header('Location: /');

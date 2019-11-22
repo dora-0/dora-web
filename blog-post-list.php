@@ -1,7 +1,7 @@
 <?php
 session_start();
 ?>
-<?php $parent = __FILE__; ?>
+<?php $parent = basename(__FILE__); ?>
 
 <!DOCTYPE html>
 <html lang="ko">
