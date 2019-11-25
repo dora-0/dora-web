@@ -36,9 +36,18 @@ session_start();
                 <div class="col-md-6"><img class="img-thumbnail" src="assets/img/preview-3.png"></div>
                 <div class="col-md-6">
                     <h3>언제 어디서나 자유롭게</h3>
-                    <div class="getting-started-info">
-                        <p>채팅 서비스를 이용할 수 있습니다.</p>
-                    </div><button class="btn btn-outline-success btn-lg" type="button" onclick="window.location.href = 'join'">Join Now</button></div>
+                    <?php if (!isset($_SESSION["user_id"])): ?>
+                        <div class="getting-started-info">
+                            <p>채팅 서비스를 이용할 수 있습니다.<br/>회원이 되시면 고정 닉네임을 사용하실 수 있습니다.</p>
+                        </div>
+                        <button class="btn btn-outline-success btn-lg" type="button" onclick="window.location.href = 'join'">Join Now</button>
+                    <?php else: ?>
+                        <div class="getting-started-info">
+                            <p>채팅 서비스를 이용할 수 있습니다.</p>
+                        </div>
+                        <button class="btn btn-outline-success btn-lg" type="button" onclick="window.location.href = 'chat'">Start Now</button>
+                    <?php endif; ?>
+                </div>
             </div>
         </div>
     </section>
