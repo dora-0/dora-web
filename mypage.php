@@ -99,7 +99,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <button class="btn btn-success btn-block" type="button" onclick="verify_mypage('submit')">수정 완료</button>
                         </div>
                         <div class="tab-pane fade" id="cancel-user">
-                            <p>Nunc vitae turpis id nibh sodales commodo et non augue. Proin fringilla ex nunc. Integer tincidunt risus ut facilisis tristique.</p>
+                            <p>회원 탈퇴할 경우 사용 중이던 닉네임은 다른 사용자가 사용할 수 있게 됩니다. 계속하시겠습니까?</p>
+                            <div class="form-group"><label for="password">기존 비밀번호</label><input class="form-control item" type="password" id="c_password" name="c_password"><label id="c_message" class="text-danger">현재 회원 탈퇴는 지원되지 않습니다.</label></div>
+                            <button class="btn btn-success btn-block" type="button">회원 탈퇴</button>
                         </div>
                     </form>
                 </div>
