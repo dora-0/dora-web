@@ -32,26 +32,24 @@ session_start();
                             <a class="nav-link" data-toggle="tab" href="#cancel-user">회원탈퇴</a>
                         </li>
                     </ul>
-                    <div class="tab-content">
+                    <form id="mypageForm" class="tab-content" method="post" action="mypage">
                         <div class="tab-pane fade show active" id="modify-user">
-                            <form id="mypageForm" method="post" action="mypage">
-                                <?php if (isset($_GET["redirect_url"])): ?>
-                                    <input type='hidden' name='redirect_url' value='<?=$_GET["redirect_url"]?>' />
-                                <?php elseif (isset($_POST["redirect_url"])): ?>
-                                    <input type='hidden' name='redirect_url' value='<?=$_POST["redirect_url"]?>' />
-                                <?php endif; ?>
-                                <div class="form-group"><label for="username">아이디</label><input class="form-control item" type="text" id="username" name="user_id"><label id="verify_user_id"></label></div>
-                                <div class="form-group"><label for="password">비밀번호</label><input class="form-control" type="password" id="password" name="password"><label id="verify_password"></label></div>
-                                <!--                <div class="form-group">-->
-                                <!--                    <div class="form-check"><input class="form-check-input" type="checkbox" id="checkbox"><label class="form-check-label" for="checkbox">자동 로그인</label></div>-->
-                                <!--                </div>-->
-                                <button class="btn btn-success btn-block" type="submit">수정 완료</button>
-                            </form>
+                        <?php if (isset($_GET["redirect_url"])): ?>
+                            <input type='hidden' name='redirect_url' value='<?=$_GET["redirect_url"]?>' />
+                        <?php elseif (isset($_POST["redirect_url"])): ?>
+                            <input type='hidden' name='redirect_url' value='<?=$_POST["redirect_url"]?>' />
+                        <?php endif; ?>
+                        <div class="form-group"><label for="username">아이디</label><input class="form-control item" type="text" id="username" name="user_id"><label id="verify_user_id"></label></div>
+                        <div class="form-group"><label for="password">비밀번호</label><input class="form-control" type="password" id="password" name="password"><label id="verify_password"></label></div>
+                        <!--                <div class="form-group">-->
+                        <!--                    <div class="form-check"><input class="form-check-input" type="checkbox" id="checkbox"><label class="form-check-label" for="checkbox">자동 로그인</label></div>-->
+                        <!--                </div>-->
+                        <button class="btn btn-success btn-block" type="submit">수정 완료</button>
                         </div>
                         <div class="tab-pane fade" id="cancel-user">
                             <p>Nunc vitae turpis id nibh sodales commodo et non augue. Proin fringilla ex nunc. Integer tincidunt risus ut facilisis tristique.</p>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
