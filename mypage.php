@@ -18,6 +18,10 @@ session_start();
 <main class="page login-page">
     <section class="clean-block clean-form dark">
         <div class="container">
+            <div class="block-heading">
+                <h2 class="text-success">내 정보 관리</h2>
+                <p>등록된 정보를 관리할 수 있습니다.</p>
+            </div>
             <div class="row">
                 <div class="col">
                     <ul class="nav nav-tabs">
@@ -30,10 +34,6 @@ session_start();
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane fade show active" id="modify-user">
-                            <div class="block-heading">
-                                <h2 class="text-success">내 정보 관리</h2>
-                                <p>등록된 정보를 관리할 수 있습니다.</p>
-                            </div>
                             <form id="mypageForm" method="post" action="mypage">
                                 <?php if (isset($_GET["redirect_url"])): ?>
                                     <input type='hidden' name='redirect_url' value='<?=$_GET["redirect_url"]?>' />
