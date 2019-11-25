@@ -19,7 +19,12 @@ session_start();
     <section class="clean-block clean-hero" style="background-image: url(&quot;assets/img/main-page.jpg&quot;);color: rgba(0,0,0, 0.75);">
         <div class="text">
             <h2>실시간 채팅</h2>
-            <p>Simple Live-Chat Service</p><button class="btn btn-outline-light btn-lg" type="button" onclick="window.location.href = 'join'">Join Now</button></div>
+            <?php if (!isset($_SESSION["user_id"])): ?>
+                <p>Simple Live-Chat Service</p><button class="btn btn-outline-light btn-lg" type="button" onclick="window.location.href = 'join'">Join Now</button>
+            <?php else: ?>
+                <p>Simple Live-Chat Service</p><button class="btn btn-outline-light btn-lg" type="button" onclick="window.location.href = 'chat'">Start Now</button>
+            <?php endif; ?>
+        </div>
     </section>
     <section class="clean-block clean-info dark">
         <div class="container">
