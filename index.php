@@ -16,7 +16,7 @@ session_start();
 <body>
 <?php include("nav.php"); ?>
 <main class="page landing-page">
-    <section class="clean-block clean-hero" style="background-image: url(&quot;assets/img/tech/image4.jpg&quot;);color: rgba(40,167,69, 0.85);">
+    <section class="clean-block clean-hero" style="background-image: url(&quot;assets/img/main-page.jpg&quot;);color: rgba(0,0,0, 0.75);">
         <div class="text">
             <h2>실시간 채팅</h2>
             <p>Simple Live-Chat Service</p><button class="btn btn-outline-light btn-lg" type="button" onclick="window.location.href = 'join'">Join Now</button></div>
