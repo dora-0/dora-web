@@ -24,7 +24,7 @@ session_start();
             </div>
             <div class="row">
                 <div class="col">
-                    <ul class="nav nav-tabs">
+                    <ul class="nav nav-tabs nav-justified justify-content-center">
                         <li class="nav-item">
                             <a class="nav-link active" data-toggle="tab" href="#modify-user">회원정보 수정</a>
                         </li>
