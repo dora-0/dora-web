@@ -6,7 +6,6 @@
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item" role="presentation"><a class="nav-link <?php if ($parent === "index.php") echo "active"; ?>" href="index">Home</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link <?php if ($parent === "chat.php") echo "active"; ?>" href="chat">Chat</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link <?php if ($parent === "board.php") echo "active"; ?>" href="board">Board</a></li>
                     <?php if (isset($_SESSION["user_id"])): ?>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="logout">Logout</a></li>
                     <?php else: ?>
