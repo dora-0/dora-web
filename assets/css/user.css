@@ -12,6 +12,8 @@
 
 .clean-block.clean-form ul {
   max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .clean-block.clean-post .post-body .post-info span:not(:last-child) {
