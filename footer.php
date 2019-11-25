@@ -5,7 +5,7 @@
                 <div class="col-sm-6">
                     <h5>Get started</h5>
                     <ul>
-                        <li><a href="index">Home</a></li>
+                        <li><a href="/">Home</a></li>
                         <li><a href="chat">Chat</a></li>
                     </ul>
                 </div>
