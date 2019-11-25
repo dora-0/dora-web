@@ -3,6 +3,8 @@ if ($_SERVER["REQUEST_METHOD"] != "POST") {
     exit;
 }
 
+session_start();
+
 if (isset($mode)) {
     $_GET["mode"] = $mode;
     unset($mode);
@@ -23,7 +25,12 @@ function verify_data($string, $mode) {
 
         switch ($mode) {
             case "user_id":
-                $data->outMsg = "<span class='text-success'>사용 가능한 아이디입니다.</span>";
+                if ($_GET["db_check"] === "true") {
+                    $data->outMsg = "<span class='text-success'>사용 가능한 아이디입니다.</span>";
+                }
+                else {
+                    $data->outMsg = "<span class='text-success'>사용 가능한 형식의 아이디입니다.</span>";
+                }
 
                 if (preg_match("/^[A-Za-z0-9]+$/", $string) == false) {
                     $data->verified = false;
@@ -36,7 +43,12 @@ function verify_data($string, $mode) {
                 }
                 break;
             case "nickname":
-                $data->outMsg = "<span class='text-success'>사용 가능한 닉네임입니다.</span>";
+                if ($_GET["db_check"] === "true") {
+                    $data->outMsg = "<span class='text-success'>사용 가능한 닉네임입니다.</span>";
+                }
+                else {
+                    $data->outMsg = "<span class='text-success'>사용 가능한 형식의 닉네임입니다.</span>";
+                }
 
                 if (preg_match("/[ #\&\+\-%@=\/\\\:;,\.'\"\^`~\_|\!\?\*$#<>()\[\]\{\}]/i", $string) != false) {
                     $data->verified = false;
@@ -95,8 +107,15 @@ function dupe_check() {
     $query = "SELECT * FROM `users` WHERE user_id='".$_POST["user_id"]."'";
     if ($result = mysqli_query($link, $query, MYSQLI_STORE_RESULT)) {
         if (mysqli_num_rows($result) !== 0) {
+            $row = mysqli_fetch_array($result);
             $data->user_id->verified = false;
-            $data->user_id->outMsg = "<span class='text-danger'>이미 존재하는 아이디입니다.</span>";
+            if ($row["user_id"] === $_SESSION["user_id"]) { //회원정보 수정 시 본인 닉네임을 체크하기 위한 검사 구문
+                $data->user_id->verified = true;
+                $data->nickname->outMsg = "";
+            }
+            else {
+                $data->user_id->outMsg = "<span class='text-danger'>이미 존재하는 아이디입니다.</span>";
+            }
             mysqli_free_result($result);
         }
     }
@@ -105,8 +124,15 @@ function dupe_check() {
     $query = "SELECT * FROM `users` WHERE nickname='".$_POST["nickname"]."'";
     if ($result = mysqli_query($link, $query, MYSQLI_STORE_RESULT)) {
         if (mysqli_num_rows($result) !== 0) {
+            $row = mysqli_fetch_array($result);
             $data->nickname->verified = false;
-            $data->nickname->outMsg = "<span class='text-danger'>이미 존재하는 닉네임입니다.</span>";
+            if ($row["user_id"] === $_SESSION["user_id"]) { //회원정보 수정 시 본인 닉네임을 체크하기 위한 검사 구문
+                $data->nickname->verified = true;
+                $data->nickname->outMsg = "";
+            }
+            else {
+                $data->nickname->outMsg = "<span class='text-danger'>이미 존재하는 닉네임입니다.</span>";
+            }
             mysqli_free_result($result);
         }
     }

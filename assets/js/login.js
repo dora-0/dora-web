@@ -8,8 +8,8 @@ function verify_login(mode = null) {
         data: params,
         dataType: 'json',
         success: function (response) {
-            $('#verify_user_id').html(response.user_id.outMsg);
-            $('#verify_password').html(response.pass.outMsg);
+            if (!response.user_id.verified) $('#verify_user_id').html(response.user_id.outMsg);
+            if (!response.pass.verified) $('#verify_password').html(response.pass.outMsg);
             verified =
                 response.user_id.verified &&
                 response.pass.verified;
@@ -23,5 +23,5 @@ function verify_login(mode = null) {
     });
 }
 
-$('#username').change(verify_login);
-$('#password').change(verify_login);
+// $('#username').change(verify_login);
+// $('#password').change(verify_login);

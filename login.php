@@ -79,8 +79,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <!--                <div class="form-group">-->
                 <!--                    <div class="form-check"><input class="form-check-input" type="checkbox" id="checkbox"><label class="form-check-label" for="checkbox">자동 로그인</label></div>-->
                 <!--                </div>-->
-                <button class="btn btn-success btn-block" type="submit">로그인</button>
-                <button class="btn btn-block btn-outline-success" type="button" onclick="location.href = 'join'">회원가입</button>
+                <button class="btn btn-success btn-block" type="button" onclick="verify_login('submit')">로그인</button>
+                <button class="btn btn-block btn-outline-success" type="button" onclick="window.location.href = 'join'">회원가입</button>
             </form>
         </div>
     </section>
@@ -91,6 +91,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
 <script src="assets/js/smoothproducts.min.js"></script>
 <script src="assets/js/theme.js"></script>
+<script src="assets/js/login.js"></script>
 </body>
 
 </html>
