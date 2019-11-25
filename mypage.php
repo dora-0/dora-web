@@ -28,5 +28,6 @@ session_start();
 <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
 <script src="assets/js/smoothproducts.min.js"></script>
 <script src="assets/js/theme.js"></script>
+<?php include("footer.php"); ?>
 </body>
 </html>
