@@ -10,6 +10,10 @@
   border-top: 2px solid #28a745;
 }
 
+.clean-block.clean-form ul {
+  max-width: 500px;
+}
+
 .clean-block.clean-post .post-body .post-info span:not(:last-child) {
   color: #28a745;
 }
