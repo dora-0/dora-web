@@ -12,7 +12,7 @@
                 <div class="col-sm-6">
                     <h5>Source Code</h5>
                     <ul>
-                        <li><a href="https://github.com/dora-0/dora-web-chat" target="_blank">Web: dora-web <i class="fas fa-external-link-alt"></i></a></li>
+                        <li><a href="https://github.com/dora-0/dora-web" target="_blank">Web: dora-web <i class="fas fa-external-link-alt"></i></a></li>
                         <li><a href="https://github.com/dora-0/dora-web-chat" target="_blank">Chat Server: dora-web-chat <i class="fas fa-external-link-alt"></i></a></li>
                     </ul>
                 </div>
