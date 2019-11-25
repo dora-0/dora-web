@@ -28,7 +28,7 @@ session_start();
                 <p>라이브 채팅 서비스</p>
             </div>
             <div class="row align-items-center">
-                <div class="col-md-6"><img class="img-thumbnail" src="assets/img/scenery/image5.jpg"></div>
+                <div class="col-md-6"><img class="img-thumbnail" src="assets/img/preview-3.png"></div>
                 <div class="col-md-6">
                     <h3>언제 어디서나 자유롭게</h3>
                     <div class="getting-started-info">
@@ -71,9 +71,8 @@ session_start();
             </div>
             <div class="carousel slide" data-ride="carousel" id="carousel-1">
                 <div class="carousel-inner" role="listbox">
-                    <div class="carousel-item active"><img class="w-100 d-block" src="assets/img/scenery/image1.jpg" alt="Slide Image"></div>
-                    <div class="carousel-item"><img class="w-100 d-block" src="assets/img/scenery/image4.jpg" alt="Slide Image"></div>
-                    <div class="carousel-item"><img class="w-100 d-block" src="assets/img/scenery/image6.jpg" alt="Slide Image"></div>
+                    <div class="carousel-item active"><img class="w-100 d-block" src="assets/img/preview-1.png" alt="Slide Image"></div>
+                    <div class="carousel-item"><img class="w-100 d-block" src="assets/img/preview-2.png" alt="Slide Image"></div>
                 </div>
                 <div><a class="carousel-control-prev" href="#carousel-1" role="button" data-slide="prev"><span class="carousel-control-prev-icon"></span><span class="sr-only">Previous</span></a><a class="carousel-control-next" href="#carousel-1" role="button"
                                                                                                                                                                                                      data-slide="next"><span class="carousel-control-next-icon"></span><span class="sr-only">Next</span></a></div>
