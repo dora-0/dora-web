@@ -79,7 +79,6 @@ session_start();
                 <ol class="carousel-indicators">
                     <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
                     <li data-target="#carousel-1" data-slide-to="1"></li>
-                    <li data-target="#carousel-1" data-slide-to="2"></li>
                 </ol>
             </div>
         </div>
