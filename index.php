@@ -23,11 +23,10 @@ session_start();
 <main class="page landing-page">
     <section class="clean-block clean-hero" style="background-image: url(&quot;assets/img/tech/image4.jpg&quot;);color: rgba(40,167,69, 0.85);">
         <div class="text">
-            <h2>실시간 채팅</h2>
-            <p>Simple Live-Chat Service</p><a class="btn btn-outline-light btn-lg js-scroll-trigger" type="button" href="#about-section">Learn More</a>
-        </div>
+            <h2>테스트 페이지</h2>
+            <p>Chat, Blog, Member</p><button class="btn btn-outline-light btn-lg" type="button">Learn More</button></div>
     </section>
-    <section class="clean-block clean-info dark" id="about-section">
+    <section class="clean-block clean-info dark">
         <div class="container">
             <div class="block-heading">
                 <h2 class="text-success">Info</h2>
@@ -94,7 +93,6 @@ session_start();
 </main>
 <?php include("footer.php"); ?>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
 <script src="assets/js/smoothproducts.min.js"></script>
