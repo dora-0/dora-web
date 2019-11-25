@@ -23,8 +23,8 @@ session_start();
 <main class="page landing-page">
     <section class="clean-block clean-hero" style="background-image: url(&quot;assets/img/tech/image4.jpg&quot;);color: rgba(40,167,69, 0.85);">
         <div class="text">
-            <h2>테스트 페이지</h2>
-            <p>Chat, Blog, Member</p><button class="btn btn-outline-light btn-lg" type="button">Learn More</button></div>
+            <h2>실시간 채팅</h2>
+            <p>Simple Live-Chat Service</p><button class="btn btn-outline-light btn-lg" type="button" onclick="window.location.href = 'join'">Join Now</button></div>
     </section>
     <section class="clean-block clean-info dark">
         <div class="container">
@@ -38,7 +38,7 @@ session_start();
                     <h3>언제 어디서나 자유롭게</h3>
                     <div class="getting-started-info">
                         <p>채팅 서비스를 이용할 수 있습니다.</p>
-                    </div><button class="btn btn-outline-success btn-lg" type="button">Join Now</button></div>
+                    </div><button class="btn btn-outline-success btn-lg" type="button" onclick="window.location.href = 'join'">Join Now</button></div>
             </div>
         </div>
     </section>
@@ -54,8 +54,8 @@ session_start();
                     <p>이 페이지는 Bootstrap으로 만들어졌습니다.</p>
                 </div>
                 <div class="col-md-5 feature-box"><i class="icon-pencil icon"></i>
-                    <h4>Customizable</h4>
-                    <p>자유롭게 커스텀할 수 있습니다.</p>
+                    <h4>Live Chat</h4>
+                    <p>끊김없는 실시간 채팅 서비스를 사용할 수 있습니다.</p>
                 </div>
                 <div class="col-md-5 feature-box"><i class="icon-screen-smartphone icon"></i>
                     <h4>Responsive</h4>
@@ -71,8 +71,8 @@ session_start();
     <section class="clean-block slider dark">
         <div class="container">
             <div class="block-heading">
-                <h2 class="text-success">Slider</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p>
+                <h2 class="text-success">Screenshot</h2>
+                <p>스크린샷을 볼 수 있습니다.</p>
             </div>
             <div class="carousel slide" data-ride="carousel" id="carousel-1">
                 <div class="carousel-inner" role="listbox">

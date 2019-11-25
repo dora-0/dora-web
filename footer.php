@@ -2,28 +2,18 @@
     <footer class="page-footer dark">
         <div class="container">
             <div class="row">
-                <div class="col-sm-4">
+                <div class="col-sm-6">
                     <h5>Get started</h5>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">가입</a></li>
-                        <li><a href="#">다운로드</a></li>
+                        <li><a href="index">Home</a></li>
+                        <li><a href="chat">Chat</a></li>
                     </ul>
                 </div>
-                <div class="col-sm-4">
-                    <h5>Support</h5>
+                <div class="col-sm-6">
+                    <h5>Source Code</h5>
                     <ul>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Help desk</a></li>
-                        <li><a href="#">Forums</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-4">
-                    <h5>Legal</h5>
-                    <ul>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Terms of Use</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Web: dora-web <i class="fas fa-external-link-alt"></i></a></li>
+                        <li><a href="#">Chat Server: dora-web-chat <i class="fas fa-external-link-alt"></i></a></li>
                     </ul>
                 </div>
             </div>
