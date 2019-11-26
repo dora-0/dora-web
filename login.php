@@ -13,7 +13,7 @@ if (isset($_SESSION["user_id"])) {
     exit;
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
     require "core/db_init.php";
 
     $verify_login = true;

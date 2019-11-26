@@ -7,7 +7,7 @@ if (isset($_SESSION["user_id"])) {
     header('Location: /');
     exit;
 }
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $mode = "join";
     $db_check = "true";
     require_once "core/verify_data.php";
