@@ -12,6 +12,7 @@ if (isset($_SESSION["user_id"])) {
     header('Location: '.$redirect_url);
     exit;
 }
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require "core/db_init.php";
 

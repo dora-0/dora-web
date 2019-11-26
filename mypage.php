@@ -3,10 +3,16 @@ session_start();
 ?>
 <?php $parent = basename(__FILE__); ?>
 <?php
+$redirect_url = "/";
+if (isset($_POST["redirect_url"])) {
+    $redirect_url = $_POST["redirect_url"];
+}
+
 if (!isset($_SESSION["user_id"])) {
-    header('Location: /');
+    header('Location: '.$redirect_url);
     exit;
 }
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mode = "join";
     $db_check = "true";
@@ -16,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $data->pass->verified &&
 //        $data->pass_confirm->verified &&
         $data->email->verified)) {
-        echo "<script>alert('비정상적인 접근이 감지되었습니다.'); window.location.href = '/'</script>";
+        echo "<script>alert('비정상적인 접근이 감지되었습니다.'); window.location.href = '".$redirect_url."'</script>";
 //            header('HTTP/1.1 301 Moved Permanently');
 //            header('Location: https://azure.mandora.xyz/dora-web/');
         exit;
@@ -28,30 +34,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             case 1:
                 $row = mysqli_fetch_array($result);
 
-                $redirect_url = "/";
                 $new_query = "UPDATE `users` SET nickname='".$_POST["nickname"]."', email='".$_POST["email"]."' where user_id='".$_POST["user_id"]."'";
 
                 if (mysqli_query($link, $new_query, MYSQLI_USE_RESULT)) {
-                    if (isset($_POST["redirect_url"])) {
-                        $redirect_url = $_POST["redirect_url"];
-                    }
-
                     //update session variables
                     $_SESSION["nickname"] = $_POST["nickname"];
                     $_SESSION["email"] = $_POST["email"];
-                    echo "<script>alert('회원정보 수정이 완료되었습니다.'); window.location.href = '.".$redirect_url.".'</script>";
+                    echo "<script>alert('회원정보 수정이 완료되었습니다.'); window.location.href = '".$redirect_url."'</script>";
 //                        header('Location: '.$redirect_url);
                 }
                 break;
             default:
                 trigger_error("잘못된 값이 제공되었습니다. mypage.php: 쿼리의 결과가 1이 아닙니다.", E_USER_WARNING);
-                echo "<script>alert('비밀번호가 일치하지 않습니다.'); window.location.href = '/mypage'</script>";
+                echo "<script>alert('비밀번호가 일치하지 않습니다.'); history.back()</script>";
                 exit;
         }
     }
     else {
         trigger_error("Query operation failed on DB server. mysqli_error() reported as follows: ".mysqli_error($link), E_USER_WARNING);
-        echo "<script>alert('작업 처리 중 문제가 발생하였습니다. 관리자에게 문의하세요.'); window.location.href = '/'</script>";
+        echo "<script>alert('작업 처리 중 문제가 발생하였습니다. 관리자에게 문의하세요.'); window.location.href = '".$redirect_url."'</script>";
         exit;
     }
 }
