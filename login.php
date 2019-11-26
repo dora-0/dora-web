@@ -3,8 +3,13 @@ session_start();
 ?>
 <?php $parent = basename(__FILE__); ?>
 <?php
+$redirect_url = "/";
+if (isset($_POST["redirect_url"])) {
+    $redirect_url = $_POST["redirect_url"];
+}
+
 if (isset($_SESSION["user_id"])) {
-    header('Location: /');
+    header('Location: '.$redirect_url);
     exit;
 }
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -18,14 +23,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $row = mysqli_fetch_array($result);
 
                 //register session variables
-                $redirect_url = "/";
                 $_SESSION["user_id"] = $row["user_id"];
                 $_SESSION["nickname"] = $row["nickname"];
                 $_SESSION["email"] = $row["email"];
 
-                if (isset($_POST["redirect_url"])) {
-                    $redirect_url = $_POST["redirect_url"];
-                }
                 header('Location: '.$redirect_url);
                 break;
             case 0:
