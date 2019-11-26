@@ -70,8 +70,22 @@ function cancel_user() {
     });
 }
 
-// $('#username').change(verify_mypage);
-$('#nick').change(verify_mypage);
-$('#password').change(verify_mypage);
-$('#password_confirm').change(verify_mypage);
-$('#email').change(verify_mypage);
+function changeEvent() {
+    var currentVal = $(this).val();
+    if(currentVal === oldVal) {
+        return;
+    }
+
+    oldVal = currentVal;
+    verify_data();
+}
+
+$("#nick").on("propertychange change keyup paste input", changeEvent);
+$("#password").on("propertychange change keyup paste input", changeEvent);
+$("#password_confirm").on("propertychange change keyup paste input", changeEvent);
+$("#email").on("propertychange change keyup paste input", changeEvent);
+
+// $('#nick').change(verify_mypage);
+// $('#password').change(verify_mypage);
+// $('#password_confirm').change(verify_mypage);
+// $('#email').change(verify_mypage);

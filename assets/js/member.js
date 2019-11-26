@@ -45,8 +45,24 @@ function verify_data(mode = null) {
     });
 }
 
-$('#username').change(verify_data);
-$('#nick').change(verify_data);
-$('#password').change(verify_data);
-$('#password_confirm').change(verify_data);
-$('#email').change(verify_data);
+function changeEvent() {
+    var currentVal = $(this).val();
+    if(currentVal === oldVal) {
+        return;
+    }
+
+    oldVal = currentVal;
+    verify_data();
+}
+
+$("#username").on("propertychange change keyup paste input", changeEvent);
+$("#nick").on("propertychange change keyup paste input", changeEvent);
+$("#password").on("propertychange change keyup paste input", changeEvent);
+$("#password_confirm").on("propertychange change keyup paste input", changeEvent);
+$("#email").on("propertychange change keyup paste input", changeEvent);
+
+// $('#username').change(verify_data);
+// $('#nick').change(verify_data);
+// $('#password').change(verify_data);
+// $('#password_confirm').change(verify_data);
+// $('#email').change(verify_data);
