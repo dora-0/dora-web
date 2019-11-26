@@ -77,7 +77,7 @@ function changeEvent() {
     }
 
     oldVal = currentVal;
-    verify_data();
+    verify_mypage();
 }
 
 $("#nick").on("propertychange change keyup paste input", changeEvent);
