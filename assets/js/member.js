@@ -45,6 +45,8 @@ function verify_data(mode = null) {
     });
 }
 
+var oldVal = ""; //global variable
+
 function changeEvent() {
     var currentVal = $(this).val();
     if(currentVal === oldVal) {

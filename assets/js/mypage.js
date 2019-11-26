@@ -70,6 +70,8 @@ function cancel_user() {
     });
 }
 
+var oldVal = ""; //global variable
+
 function changeEvent() {
     var currentVal = $(this).val();
     if(currentVal === oldVal) {
