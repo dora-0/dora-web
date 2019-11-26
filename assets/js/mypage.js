@@ -82,7 +82,7 @@ function changeEvent() {
 
 $("#nick").on("propertychange change keyup paste input", changeEvent);
 $("#password").on("propertychange change keyup paste input", changeEvent);
-$("#password_confirm").on("propertychange change keyup paste input", changeEvent);
+// $("#password_confirm").on("propertychange change keyup paste input", changeEvent);
 $("#email").on("propertychange change keyup paste input", changeEvent);
 
 // $('#nick').change(verify_mypage);
