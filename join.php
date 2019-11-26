@@ -57,9 +57,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <p>일부 서비스는 회원가입 후 이용 가능합니다.</p>
             </div>
             <form id="JoinForm" method="post" action="join">
-                <div class="form-group"><label for="username">아이디</label><input class="form-control item" type="text" id="username" name="user_id"><label id="verify_user_id"></label></div>
-                <div class="form-group"><label for="password">비밀번호</label><input class="form-control item" type="password" id="password" name="password"><label id="verify_password"></label></div>
-                <div class="form-group"><label for="password_confirm">비밀번호 확인</label><input class="form-control item" type="password" id="password_confirm" name="password_confirm"><label id="verify_password_confirm"></label></div>
+                <div class="form-group"><label for="username">아이디</label><input class="form-control item" type="text" id="username" name="user_id" autocomplete="username"><label id="verify_user_id"></label></div>
+                <div class="form-group"><label for="password">비밀번호</label><input class="form-control item" type="password" id="password" name="password" autocomplete="new-password"><label id="verify_password"></label></div>
+                <div class="form-group"><label for="password_confirm">비밀번호 확인</label><input class="form-control item" type="password" id="password_confirm" name="password_confirm" autocomplete="new-password"><label id="verify_password_confirm"></label></div>
                 <div class="form-group"><label for="nick">닉네임</label><input class="form-control item" type="text" id="nick" name="nickname"><label id="verify_nickname"></label></div>
                 <div class="form-group"><label for="email">E-mail</label><input class="form-control item" type="email" id="email" name="email"><label id="verify_email"></label></div>
                 <button class="btn btn-success btn-block" type="button" onclick="verify_data('submit')">회원가입</button>
