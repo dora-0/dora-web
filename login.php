@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION["email"] = $row["email"];
 
                 header('Location: '.$redirect_url);
-                break;
+                exit;
             case 0:
                 $verify_login = false;
                 break;

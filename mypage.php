@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     echo "<script>alert('회원정보 수정이 완료되었습니다.'); window.location.href = '".$redirect_url."'</script>";
 //                        header('Location: '.$redirect_url);
                 }
-                break;
+                exit;
             default:
                 trigger_error("잘못된 값이 제공되었습니다. mypage.php: 쿼리의 결과가 1이 아닙니다.", E_USER_WARNING);
                 echo "<script>alert('비밀번호가 일치하지 않습니다.'); history.back()</script>";
