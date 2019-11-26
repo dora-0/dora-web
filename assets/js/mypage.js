@@ -42,6 +42,32 @@ function verify_mypage(mode = null) {
     });
 }
 
+function cancel_user() {
+    var params = $("#mypageForm").serialize();
+    $('#btn-cancel').attr('disabled', 'disabled');
+
+    $.ajax({
+        url: "mypage?mode=cancel",
+        type: 'POST',
+        data: params,
+        dataType: 'json',
+        success: function (response) {
+            if (response.success) {
+                alert('회원탈퇴가 완료되었습니다.');
+            }
+            else {
+                alert('작업 처리 중 오류가 발생했습니다.');
+            }
+
+            window.location.href = '/';
+        },
+        error: function (jqXHR) {
+            alert("Ajax 오류가 발생했습니다. (Error Code: " + jqXHR.status + ")");
+            window.location.href = '/';
+        }
+    });
+}
+
 // $('#username').change(verify_mypage);
 $('#nick').change(verify_mypage);
 $('#password').change(verify_mypage);

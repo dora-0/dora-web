@@ -13,6 +13,27 @@ if (!isset($_SESSION["user_id"])) {
     exit;
 }
 
+if ($_GET["mode"] === "cancel") {
+    require "core/db_init.php";
+
+    $data = new stdClass();
+    $query = "DELETE FROM `users` WHERE user_id='".$_SESSION["user_id"]."'";
+    if (mysqli_query($link, $query, MYSQLI_USE_RESULT)) {
+        $data->success = true;
+        echo json_encode($data);
+        unset($data);
+        session_unset();
+        exit;
+    }
+    else {
+        trigger_error("Query operation failed on DB server. mysqli_error() reported as follows: ".mysqli_error($link), E_USER_WARNING);
+        $data->success = false;
+        echo json_encode($data);
+        unset($data);
+        exit;
+    }
+}
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $mode = "join";
     $db_check = "true";
@@ -101,8 +122,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         </div>
                         <div class="tab-pane fade" id="cancel-user">
                             <p>회원 탈퇴할 경우 사용 중이던 닉네임은 다른 사용자가 사용할 수 있게 됩니다. 계속하시겠습니까?</p>
-                            <div class="form-group"><label for="c_password">현재 비밀번호</label><input class="form-control item" type="password" id="c_password" name="c_password"><label id="c_message" class="text-danger">현재 회원 탈퇴는 지원되지 않습니다.</label></div>
-                            <button class="btn btn-success btn-block" type="button">회원 탈퇴</button>
+                            <button id="btn-cancel" class="btn btn-success btn-block" type="button">회원 탈퇴</button>
                         </div>
                     </form>
                 </div>
