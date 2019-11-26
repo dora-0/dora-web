@@ -23,5 +23,14 @@ function verify_login(mode = null) {
     });
 }
 
-// $('#username').change(verify_login);
-// $('#password').change(verify_login);
+const $password = $('#password');
+// Keyboard events
+$password.keydown(event => {
+    // When the client hits ENTER on their keyboard
+    if (event.which === 13) {
+        verify_login('submit');
+    }
+});
+
+$('#username').change(verify_login);
+$password.change(verify_login);
