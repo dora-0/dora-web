@@ -1,6 +1,7 @@
 <?php if (isset($parent)): ?>
     <?php
         $filename = str_replace(".php", "", $parent);
+        if ($filename === "index") $filename = "";
         $redirect_url = "?redirect_url=/".$filename;
     ?>
     <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
