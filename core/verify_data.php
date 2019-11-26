@@ -32,7 +32,7 @@ function verify_data($string, $mode) {
                     $data->outMsg = "<span class='text-success'>사용 가능한 형식의 아이디입니다.</span>";
                 }
 
-                if (preg_match("/^[A-Za-z0-9]+$/", $string) === false) {
+                if (preg_match("/^[A-Za-z0-9]+$/", $string) !== 1) {
                     $data->verified = false;
                     $data->outMsg = "<span class='text-danger'>아이디는 영문자 또는 숫자만 사용 가능합니다.</span>";
                 }
@@ -50,7 +50,7 @@ function verify_data($string, $mode) {
                     $data->outMsg = "<span class='text-success'>사용 가능한 형식의 닉네임입니다.</span>";
                 }
 
-                if (preg_match("/[ #\&\+\-%@=\/\\\:;,\.'\"\^`~\_|\!\?\*$#<>()\[\]\{\}]/i", $string) !== false) {
+                if (preg_match("/[ #\&\+\-%@=\/\\\:;,\.'\"\^`~\_|\!\?\*$#<>()\[\]\{\}]/i", $string) === 1) {
                     $data->verified = false;
                     $data->outMsg = "<span class='text-danger'>닉네임에는 특수문자를 사용할 수 없습니다.</span>";
                 }
@@ -84,7 +84,7 @@ function verify_data($string, $mode) {
             case "email":
                 $data->outMsg = "<span class='text-success'>사용 가능한 이메일입니다.</span>";
 
-                if (preg_match("/^[_\.0-9a-zA-Z-]+@([0-9a-zA-Z][0-9a-zA-Z-]+\.)+[a-zA-Z]{2,6}$/i", $string) === false) {
+                if (preg_match("/^[_\.0-9a-zA-Z-]+@([0-9a-zA-Z][0-9a-zA-Z-]+\.)+[a-zA-Z]{2,6}$/i", $string) !== 1) {
                     $data->verified = false;
                     $data->outMsg = "<span class='text-danger'>올바른 이메일 형식이 아닙니다.</span>";
                 }
