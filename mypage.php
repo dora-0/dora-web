@@ -122,7 +122,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         </div>
                         <div class="tab-pane fade" id="cancel-user">
                             <p>회원 탈퇴할 경우 사용 중이던 닉네임은 다른 사용자가 사용할 수 있게 됩니다. 계속하시겠습니까?</p>
-                            <button id="btn-cancel" class="btn btn-success btn-block" type="button">회원 탈퇴</button>
+                            <button id="btn-cancel" class="btn btn-success btn-block" type="button" onclick="cancel_user()">회원 탈퇴</button>
                         </div>
                     </form>
                 </div>
