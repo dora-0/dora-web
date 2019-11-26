@@ -36,5 +36,5 @@
         }
     </script>
     <script src="https://chat.mandora.xyz/socket.io/socket.io.js" onload="init_login()" onerror="load_error()"></script>
-    <script src="https://chat.mandora.xyz/main.js"></script>
+    <script src="https://chat.mandora.xyz/main.min.js"></script>
 <?php endif; ?>
