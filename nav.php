@@ -12,7 +12,7 @@
                     <li class="nav-item" role="presentation"><a class="nav-link <?php if ($parent === "chat.php") echo "active"; ?>" href="chat">Chat</a></li>
                     <?php if (isset($_SESSION["user_id"])): ?>
                         <li class="nav-item" role="presentation"><a class="nav-link <?php if ($parent === "mypage.php") echo "active"; ?>" href="mypage<?=$redirect_url?>">Mypage</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="logout">Logout</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="logout<?=$redirect_url?>">Logout</a></li>
                     <?php else: ?>
                         <li class="nav-item" role="presentation"><a class="nav-link <?php if ($parent === "login.php") echo "active"; ?>" href="login<?=$redirect_url?>">Login</a></li>
                     <?php endif; ?>
