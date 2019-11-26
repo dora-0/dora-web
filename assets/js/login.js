@@ -32,5 +32,20 @@ $password.keydown(event => {
     }
 });
 
-$('#username').change(verify_login);
-$password.change(verify_login);
+var oldVal = ""; //global variable
+
+function changeEvent() {
+    var currentVal = $(this).val();
+    if(currentVal === oldVal) {
+        return;
+    }
+
+    oldVal = currentVal;
+    verify_login();
+}
+
+$("#username").on("propertychange change keyup paste input", changeEvent);
+$password.on("propertychange change keyup paste input", changeEvent);
+
+// $('#username').change(verify_login);
+// $password.change(verify_login);
