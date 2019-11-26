@@ -3,11 +3,13 @@ function verify_data(mode = null) {
     var verified = false;
     var requestURI = null;
     if (mode === "submit") {
+        $('#btn-join').attr('disabled', 'disabled');
         requestURI = "core/verify_data?mode=join&type=ajax&db_check=true";
         $('#verify_user_id').html("<span class='text-warning'>아이디 중복 검사 중 ...</span>");
         $('#verify_nickname').html("<span class='text-warning'>닉네임 중복 검사 중 ...</span>");
     }
     else {
+        $('#btn-join').removeAttr('disabled');
         requestURI = "core/verify_data?mode=join&type=ajax";
     }
     $.ajax({

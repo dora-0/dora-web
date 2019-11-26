@@ -118,7 +118,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                             <div class="form-group"><label for="password">현재 비밀번호</label><input class="form-control item" type="password" id="password" name="password"><label id="verify_password"></label></div>
                             <div class="form-group"><label for="nick">닉네임</label><input class="form-control item" type="text" id="nick" name="nickname" value="<?=$_SESSION["nickname"]?>"><label id="verify_nickname"></label></div>
                             <div class="form-group"><label for="email">E-mail</label><input class="form-control item" type="email" id="email" name="email" value="<?=$_SESSION["email"]?>"><label id="verify_email"></label></div>
-                            <button class="btn btn-success btn-block" type="button" onclick="verify_mypage('submit')">수정 완료</button>
+                            <button id="btn-update" class="btn btn-success btn-block" type="button" onclick="verify_mypage('submit')">수정 완료</button>
                         </div>
                         <div class="tab-pane fade" id="cancel-user">
                             <p>회원 탈퇴할 경우 사용 중이던 닉네임은 다른 사용자가 사용할 수 있게 됩니다. 계속하시겠습니까?</p>

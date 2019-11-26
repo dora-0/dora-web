@@ -62,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <div class="form-group"><label for="password_confirm">비밀번호 확인</label><input class="form-control item" type="password" id="password_confirm" name="password_confirm" autocomplete="new-password"><label id="verify_password_confirm"></label></div>
                 <div class="form-group"><label for="nick">닉네임</label><input class="form-control item" type="text" id="nick" name="nickname"><label id="verify_nickname"></label></div>
                 <div class="form-group"><label for="email">E-mail</label><input class="form-control item" type="email" id="email" name="email"><label id="verify_email"></label></div>
-                <button class="btn btn-success btn-block" type="button" onclick="verify_data('submit')">회원가입</button>
+                <button id="btn-join" class="btn btn-success btn-block" type="button" onclick="verify_data('submit')">회원가입</button>
             </form>
         </div>
     </section>
