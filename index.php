@@ -20,7 +20,7 @@ session_start();
         <div class="text">
             <h2>실시간 채팅</h2>
             <?php if (!isset($_SESSION["user_id"])): ?>
-                <p>Simple Live-Chat Service</p><button class="btn btn-outline-light btn-lg" type="button" onclick="window.location.href = 'join'">Join Now</button>
+                <p>Simple Live-Chat Service</p><button class="btn btn-outline-light btn-lg" type="button" onclick="window.location.href = 'login'">Join Now</button>
             <?php else: ?>
                 <p>Simple Live-Chat Service</p><button class="btn btn-outline-light btn-lg" type="button" onclick="window.location.href = 'chat'">Start Now</button>
             <?php endif; ?>
@@ -40,7 +40,7 @@ session_start();
                         <div class="getting-started-info">
                             <p>채팅 서비스를 이용할 수 있습니다.<br/>회원이 되시면 고정 닉네임을 사용하실 수 있습니다.</p>
                         </div>
-                        <button class="btn btn-outline-success btn-lg" type="button" onclick="window.location.href = 'join'">Join Now</button>
+                        <button class="btn btn-outline-success btn-lg" type="button" onclick="window.location.href = 'login'">Join Now</button>
                     <?php else: ?>
                         <div class="getting-started-info">
                             <p>채팅 서비스를 이용할 수 있습니다.</p>
